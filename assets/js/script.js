@@ -233,13 +233,82 @@ Last change:    00/00/00
 			});
 
 			innerArea.addEventListener("mouseleave", () => {
-				gsap.to(image, { opacity: 0, scale: 0.9, duration: 0.3 });
+				gsap.to(image, { opacity: 0, scale: 0.8, duration: 0.3 });
 			});
 
 		});
 
 	}
 	
+	document.querySelectorAll(".nx-spon1-item").forEach((item) => {
+
+		function randomAnimation() {
+			const delay = Math.random() * 10000 + 3000;
+			setTimeout(() => {
+				item.classList.add("active");
+				setTimeout(() => {
+					item.classList.remove("active");
+					randomAnimation();
+				}, 1000);
+
+			}, delay);
+		}
+
+		randomAnimation();
+
+	});
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		const cards = gsap.utils.toArray(".nx_sticky_item");
+		cards.forEach((card, index) => {
+			let scaleValue = 0.8 + (index * 0.1); 
+			gsap.to(card, {
+				scale: scaleValue,
+				transformOrigin: "top center",
+				ease: "none",
+				scrollTrigger: {
+					trigger: card,
+					start: `top ${170 + 40 * index}`,
+					end: "bottom 77%",
+					endTrigger: ".nx-pro1-item-wrapper",
+					pin: true,
+					pinSpacing: false,
+					scrub: true,
+					markers: false,
+				}
+			});
+
+		});
+	}
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		gsap.to(".bk-faci2-title", {
+			scrollTrigger: {
+				trigger: ".nx-pro1-sec",
+				start: "top 30%", 
+				end: "bottom bottom", 
+				pin: ".nx-pro1-action-title", 
+				pinSpacing: false,
+				markers: false
+			}
+		});
+
+		let proTitle = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".nx-pro1-sec",
+				start: "top 65%", 
+				end: "top -30%",
+				toggleActions: "play none none reverse",
+				scrub: true,
+				markers: false,
+			},
+		});
+
+		proTitle.to(".nx-pro1-action-title h3:nth-child(1)", { xPercent: -180});
+		proTitle.to(".nx-pro1-action-title h3:nth-child(2)", { xPercent: 180},"<");
+	}
 
 
 })(jQuery);
