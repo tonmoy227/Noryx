@@ -32,12 +32,18 @@
 .nx-price1-top {
 	gap: 4px;
 	display: flex;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+	}
 }
 .nx-price1-card-wrap1 {
 	width: 100%;
 	max-width: 524px;
 	border-radius: 28px;
 	background-color: #EFEFEF;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		max-width: 100%;
+	}
 }
 
 .nx-price1-card1 {
@@ -51,10 +57,18 @@
 	flex-direction: column;
 	background-color: #000000;
 	animation: floatCard 8s ease-in-out infinite;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		top: 0;
+		left: 0;
+		max-width: 100%;
+	}
 	.item-img {
 		top: 0;
 		right: -30px;
 		position: absolute;
+		@media #{$xs,$xxs} {
+			display: none;
+		}
 	}
 	.item-slug {
 		span {
@@ -127,6 +141,12 @@
 	max-width: 825px;
 	border-radius: 28px;
 	background-color: #EFEFEF;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		max-width: 100%;
+	}
+	@media #{$xxs} {
+		padding: 30px 20px;
+	}
 	.item-title {
 		h3 {
 			line-height: 1;
@@ -144,6 +164,9 @@
 			font-size: 48px;
 			font-weight: 700;
 			letter-spacing: -1px;
+			@media #{$xxs} {
+				font-size: 38px;
+			}
 			span {
 				font-size: 20px;
 				font-weight: 400;
@@ -154,6 +177,9 @@
 	.item-list {
 		gap: 30px;
 		max-width: 700px;
+		@media #{$lg,$md,$sm,$xs,$xxs} {
+			flex-wrap: wrap;
+		}
 		li {
 			gap: 12px;
 			display: flex;
@@ -174,5 +200,71 @@
 	.item-btn-wrap {
 		gap: 24px;
 		margin-top: 16px;
+		@media #{$xxs} {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+.nx-price1-bottom {
+	gap: 40px;
+	padding: 40px;
+	margin-top: 4px;
+	border-radius: 28px;
+	background-color: #000000;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+	}
+	.bottom-text {
+		max-width: 480px;
+		h3 {
+			color: #fff;
+			line-height: 1;
+			font-size: 32px;
+			font-weight: 500;
+			letter-spacing: -2px;
+			padding-bottom: 15px;
+		}
+		p {
+			color: #fff;
+			letter-spacing: -0.5px;
+			span {
+				color: #E4E4E4;
+			}
+		}
+	}
+	.bottom-list-btn {
+		width: 100%;
+		max-width: 665px;
+		@media #{$xxs} {
+			flex-wrap: wrap;
+		}
+		ul {
+			width: 100%;
+		}
+		li {
+			color: #fff;
+			width: 215px;
+			margin-bottom: 13px;
+			margin-right: 24px;
+			letter-spacing: -0.5px;
+			&:nth-child(3),
+			&:nth-child(4) {
+				margin-bottom: 0;
+				@media #{$lg,$md,$sm,$xs,$xxs} {
+					margin-bottom: 13px;
+				}
+			}
+			i {
+				width: 20px;
+				height: 20px;
+				line-height: 18px;
+				margin-right: 12px;
+				border-radius: 4px;
+				text-align: center;
+				display: inline-block;
+				background-color: var(--nx-prime-c);	
+			}
+		}
 	}
 }

@@ -315,6 +315,7 @@ a {
 			color: #000000;
 			font-size: 17px;
 			font-weight: 500;
+			white-space: nowrap;
 			font-family: var(--nx-heading);
 		}
 	}
@@ -331,6 +332,15 @@ a {
 				color: #fff;
 				font-size: 16px;
 				font-weight: 600;
+			}
+		}
+	}
+	&:is(.ver_3) {
+		a {
+			padding: 4px 16px 4px 4px;
+			i {
+				width: 44px;
+				height: 44px;
 			}
 		}
 	}

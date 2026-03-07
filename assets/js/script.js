@@ -15,7 +15,7 @@ Last change:    00/00/00
 
 // lenis-smooth-scroll
 	const lenis = new Lenis({
-		duration: .8, 
+		duration: 1.3, 
 		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
 		direction: 'vertical', 
 		smooth: true, 
@@ -308,6 +308,41 @@ Last change:    00/00/00
 
 		proTitle.to(".nx-pro1-action-title h3:nth-child(1)", { xPercent: -180});
 		proTitle.to(".nx-pro1-action-title h3:nth-child(2)", { xPercent: 180},"<");
+	}
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+
+		gsap.to(".nx-team1-content", {
+			scrollTrigger: {
+				trigger: ".nx-team1-sec",
+				start: "top -2%", 
+				end: "top -35%", 
+				pin: ".nx-team1-content", 
+				pinSpacing: false,
+				markers: false
+			}
+		});
+
+		let tmItem = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".nx-team1-wrap",
+				start: "top 6%", 
+				end: "top -14%",
+				toggleActions: "play none none reverse",
+				scrub: 2,
+				markers: false,
+			},
+		});
+
+		tmItem.from(".nx-team1-item:is(._3) .item-inner", {height: 423, width: 320, y: -350 });
+		tmItem.from(".nx-team1-item:is(._2) .item-inner", { x: 350, rotate: 0, opacity: 0 });
+		tmItem.from(".nx-team1-item:is(._4) .item-inner", { x: -350, rotate: 0, opacity: 0 },"< =");
+		tmItem.from(".nx-team1-item:is(._1) .item-inner", { x: 350, y: -20, rotate: 0, opacity: 0 });
+		tmItem.from(".nx-tm1-bottom", { opacity: 0, y: 100 },"< =");
+		tmItem.from(".nx-team1-item:is(._5) .item-inner", { x: -350,  y: -20, rotate: 0, opacity: 0 },"< =");
+		tmItem.to(".nx-team1-item:is(._3) .item-inner", { y: -80 });
+		tmItem.to(".nx-tm1-bottom", {  y: -70 },"< =");
 	}
 
 
