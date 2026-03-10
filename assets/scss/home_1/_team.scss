@@ -2,6 +2,9 @@
 	height: 150vh;
 	position: relative;
 	background-color: #000000;
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		height: auto;
+	}
 	.container {
 		max-width: 1584px;
 	}
@@ -9,11 +12,18 @@
 
 .nx-team1-wrap {
 	height: 150vh;
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		height: auto;
+	}
 }
 
 .nx-team1-top {
+	gap: 30px;
 	margin: 0 auto;
 	max-width: 1360px;
+	@media #{$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+	}
 	.nx-sec-title1 {
 		max-width: 438px;
 		.subtitle,
@@ -68,6 +78,13 @@
 
 .nx-team1-content {
 	height: 495px;
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		gap: 25px;
+		height: auto;
+		flex-wrap: wrap;
+		margin-bottom: 40px;
+		justify-content: center !important;
+	}
 }
 
 .nx-team1-item {
@@ -76,6 +93,9 @@
 		height: 312px;
 		overflow: hidden;
 		position: relative;
+		@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+			transform: rotate(0) translateY(0) translateX(0) !important;
+		}
 	}
 	.item-img {
 		overflow: hidden;
@@ -179,6 +199,12 @@
 	margin: 0 auto;
 	max-width: 485px;
 	position: absolute;
+	@media #{$xxl,$xl,$lg,$md,$sm,$xs,$xxs} {
+		bottom: 20px;
+	}
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		position: static;
+	}
 	p {
 		color: #fff;
 		padding-bottom: 30px;

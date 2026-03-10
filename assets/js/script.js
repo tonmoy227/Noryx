@@ -108,6 +108,16 @@ Last change:    00/00/00
 		fixedContentPos: false,
 	});
 
+	$('.marquee-right').marquee({
+		gap: 28,
+		speed: 40,
+		delayBeforeStart: 0,
+		direction: 'left',
+		duplicated: true,
+		pauseOnHover: false,
+		startVisible:true,
+	});
+
 	// windows-loaded-before-functions
 	document.addEventListener("DOMContentLoaded", function () {
 		window.addEventListener('load', function(){
@@ -258,6 +268,27 @@ Last change:    00/00/00
 
 	});
 
+	// const items = document.querySelectorAll(".nx-spon1-item");
+	// let current = 0;
+
+	// function runAnimation() {
+
+	// 	items[current].classList.add("active");
+
+	// 	setTimeout(() => {
+	// 		items[current].classList.remove("active");
+
+	// 		current++;
+	// 		if (current >= items.length) {
+	// 			current = 0;
+	// 		}
+
+	// 		runAnimation();
+	// 	}, 2000);
+
+	// }
+
+	// runAnimation();
 
 	if (window.matchMedia("(min-width: 1200px)").matches) {
 		const cards = gsap.utils.toArray(".nx_sticky_item");
@@ -311,7 +342,7 @@ Last change:    00/00/00
 	}
 
 
-	if (window.matchMedia("(min-width: 1200px)").matches) {
+	if (window.matchMedia("(min-width: 1400px)").matches) {
 
 		gsap.to(".nx-team1-content", {
 			scrollTrigger: {
@@ -344,6 +375,162 @@ Last change:    00/00/00
 		tmItem.to(".nx-team1-item:is(._3) .item-inner", { y: -80 });
 		tmItem.to(".nx-tm1-bottom", {  y: -70 },"< =");
 	}
+
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		gsap.to(".nx-step1-sec", {
+			scrollTrigger: {
+				trigger: ".nx-step1-area",
+				start: "top 10%",
+				end: "420px",
+				pin: ".nx-step1-sec",
+				pinSpacing: false,
+				markers: false,
+			},
+		});
+
+		var p1ani = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".nx-step1-area",
+				start: "top 0%",
+				end: "420px",
+				toggleActions: "play none none reverse",
+				scrub: true,
+				markers: false,
+			},
+		});
+
+		p1ani.to(".nx-step1-item:nth-of-type(2)", {
+			x: -405,
+		});
+
+		p1ani.to(
+			".nx-step1-item:nth-of-type(3)",
+			{
+				x: -405,
+			},
+			"<"
+			);
+
+		p1ani.to(".nx-step1-item:nth-of-type(3)", {
+			x: -810,
+		});
+		p1ani.from(".nx-step1-bottom", {
+			y: 500,
+		},"<");
+	}
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		gsap.to(".nx-testi1-marquee", {
+			scrollTrigger: {
+				trigger: ".nx-testi1-wrapper",
+				start: "top 0%", 
+				end: "bottom bottom", 
+				pin: ".nx-testi1-marquee", 
+				pinSpacing: false,
+				markers: false
+			}
+		});
+		gsap.to(".nx-testi1-bg", {
+			scrollTrigger: {
+				trigger: ".nx-testi1-wrapper",
+				start: "top -25%", 
+				end: "bottom bottom", 
+				pin: ".nx-testi1-bg", 
+				pinSpacing: false,
+				markers: false
+			}
+		});
+		const items = gsap.utils.toArray('.bk-faci2-item .inner-item');
+		items.forEach(animateItem);
+		function animateItem(el) {
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: el,
+					scrub: 1,
+					start: "top 90%",
+					end: "bottom 50%",
+					toggleActions: "play none none reverse",
+					markers: false
+				}
+			})
+			.set(el, {
+				perspective: 1000,
+				rotatey: "-90deg",
+				transformStyle: "preserve-3d",
+				transformOrigin: "50% 100%"
+			})
+			.from(el, {
+				scaleY: 0,
+				opacity: 0
+			});
+		}
+	}
+
+
+	if (window.matchMedia("(min-width: 1600px)").matches) {
+
+
+		var nxGTImg = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".nx-gt-content",
+				start: "top 40%",
+				end: "+=600",
+				toggleActions: "play none none reverse",
+				scrub: true,
+				markers: false,
+			},
+		});
+
+		nxGTImg.to(".nx-gt-img:is(.nx-gt-img1)", {
+			y: -150,
+			x:  -450,
+		});
+		nxGTImg.from(".nx-gt-text", {
+			scale: .5,
+			opacity: 0,
+		},"<");
+		nxGTImg.from(".nx-gt-img:is(.nx-gt-img2)", {
+			yPercent: 40,
+			xPercent: -120,
+		},"<");
+		nxGTImg.from(".nx-gt-img:is(.nx-gt-img3)", {
+			yPercent: 40,
+			xPercent: -325,
+		},"<");
+		nxGTImg.from(".nx-gt-img:is(.nx-gt-img4)", {
+			yPercent: -150,
+			xPercent: 225,
+		},"<");
+		nxGTImg.from(".nx-gt-img:is(.nx-gt-img5)", {
+			xPercent: 90,
+			yPercent: -175,
+		},"<");
+		nxGTImg.from(".nx-gt-img:is(.nx-gt-img6)", {
+			xPercent: -45,
+			yPercent: -125,
+		},"<");
+		nxGTImg.from(".nx-gt-img:is(.nx-gt-img7)", {
+			xPercent: -160,
+			yPercent: -125,
+		},"<");
+
+		nxGTImg.to(".nx-gt-img:is(.nx-gt-img1)", {
+			y: -150,
+			x: -450,
+		});
+
+		nxGTImg.to(".nx-gt-img:is(.nx-gt-img1)", {
+			y: "+=860",  
+			x: "-=68",
+			width: 668,
+			height: 780,
+
+		});
+	}
+
 
 
 })(jQuery);

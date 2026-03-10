@@ -1,0 +1,146 @@
+.nx-step1-sec {
+	height: 1200px;
+	.nx-sec-title1 {
+		text-align: right;
+		max-width: 440px;
+		.sec_title {
+			line-height: 1.1;
+			max-width: 320px;
+		}
+		.item-title {
+			direction: rtl;
+		}
+		p {
+			padding-top: 10px;
+		}
+	}
+}
+.nx-step1-area {
+	padding-bottom: 260px;
+}
+.nx-step1-area {
+	position: relative;
+}
+
+.nx-step1-content {
+	gap: 40px 80px;
+}
+
+.nx-step1-wrapper {
+	gap: 24px;
+	margin-right: -40%;
+}
+
+.nx-step1-item {
+	z-index: 1;
+	width: 100%;
+	padding: 32px;
+	overflow: hidden;
+	padding-top: 0;
+	max-width: 420px;
+	position: relative;
+	border-radius: 20px;
+	.nx-step-shape {
+		top: -50%;
+		right: -50%;
+		opacity: 0;
+		z-index: -1;
+		visibility: hidden;
+		transition: all 500ms ease-in-out;
+	}
+	&:before,
+	&:after {
+		top: 0;
+		left: 0;
+		z-index: -2;
+		width: 100%;
+		content: '';
+		height: 100%;
+		position: absolute;
+		background-color: #fff;
+		transition: all 500ms ease-in-out;
+		clip-path: polygon( 4.762% 0.156%,9.975% 0.156%,9.975% 0.156%,10.434% 0.186%,10.883% 0.274%,11.321% 0.418%,11.744% 0.616%,12.15% 0.866%,12.536% 1.167%,12.898% 1.515%,13.235% 1.91%,13.542% 2.349%,13.818% 2.831%,15.747% 6.564%,15.747% 6.564%,16.037% 7.07%,16.36% 7.531%,16.714% 7.946%,17.095% 8.313%,17.5% 8.629%,17.927% 8.892%,18.372% 9.1%,18.832% 9.251%,19.305% 9.344%,19.787% 9.375%,28.725% 9.375%,28.725% 9.375%,29.207% 9.344%,29.68% 9.251%,30.14% 9.1%,30.585% 8.892%,31.012% 8.629%,31.417% 8.313%,31.798% 7.946%,32.152% 7.531%,32.475% 7.07%,32.765% 6.564%,34.694% 2.831%,34.694% 2.831%,34.97% 2.349%,35.277% 1.91%,35.614% 1.515%,35.976% 1.167%,36.362% 0.866%,36.768% 0.616%,37.191% 0.418%,37.629% 0.274%,38.078% 0.186%,38.537% 0.156%,95.238% 0.156%,95.238% 0.156%,95.991% 0.236%,96.706% 0.467%,97.372% 0.836%,97.98% 1.332%,98.521% 1.941%,98.985% 2.651%,99.363% 3.45%,99.644% 4.324%,99.82% 5.262%,99.881% 6.25%,99.881% 93.75%,99.881% 93.75%,99.82% 94.738%,99.644% 95.676%,99.363% 96.55%,98.985% 97.349%,98.521% 98.059%,97.98% 98.668%,97.372% 99.164%,96.706% 99.533%,95.991% 99.764%,95.238% 99.844%,4.762% 99.844%,4.762% 99.844%,4.009% 99.764%,3.294% 99.533%,2.628% 99.164%,2.02% 98.668%,1.479% 98.059%,1.015% 97.349%,0.637% 96.55%,0.356% 95.676%,0.18% 94.738%,0.119% 93.75%,0.119% 6.25%,0.119% 6.25%,0.18% 5.262%,0.356% 4.324%,0.637% 3.45%,1.015% 2.651%,1.479% 1.941%,2.02% 1.332%,2.628% 0.836%,3.294% 0.467%,4.009% 0.236%,4.762% 0.156% );
+	}
+	&:after {
+		opacity: 0;
+		background-color: #000;
+	}
+	.item-serial {
+		line-height: 1;
+		font-size: 24px;
+		font-weight: 700;
+		margin-left: 55px;
+		color: var(--nx-title-color);
+		font-family: var(--nx-heading);
+	}
+	.item-btn {
+		padding-right: 4px;
+		.nx-btn1 {
+			a {
+				background-color: #F6F6F6;
+				i {
+					width: 36px;
+					height: 36px;
+					background-color: var(--nx-title-color);
+				}
+				span {
+					font-size: 15px;
+					font-weight: 500;
+					color: var(--nx-title-color);
+				}
+			}
+		}
+	}
+	.item-icon {
+		margin-bottom: 45px;
+	}
+	.item-text {
+		h3 {
+			font-size: 26px;
+			font-weight: 700;
+			margin-bottom: 14px;
+			letter-spacing: -1px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #F0F0F0;
+			transition: all 300ms ease-in-out;
+		}
+		p {
+			transition: all 300ms ease-in-out;
+		}
+	}
+	&:hover {
+		&:before {
+			opacity: 0;
+		}
+		&:after {
+			opacity: 1;
+		}
+		.nx-step-shape {
+			opacity: 1;
+			top: -35%;
+			right: -35%;
+			visibility: visible;
+		}
+		.item-text {
+			h3 {
+				color: #fff;
+				border-bottom: 1px solid #353535;
+			}
+			p {
+				color: #E4E4E4;
+			}
+		}
+	}
+}
+
+.nx-step1-bottom {
+	bottom: -35px;
+	left: 0;
+	line-height: .5;
+	font-size: 400px;
+	font-weight: 700;
+	position: absolute;
+	letter-spacing: -26px;
+	color: var(--nx-prime-c);
+	font-family: var(--nx-heading);
+}
