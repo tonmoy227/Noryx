@@ -1,0 +1,134 @@
+.nx-faq-part1 {
+	width: 100%;
+	max-width: 783px;
+	.nx-sec-title1 {
+		max-width: 437px;
+	}
+}
+
+.nx-faq-content {
+	gap: 40px;
+}
+
+.nx-faq-accordion {
+	.accordion-item,
+	.accordion-button {
+		background-color: #fff;
+		background-color: transparent;
+		transition: all 200ms ease-in-out;
+	}
+	.accordion-item {
+		border: none;
+		position: relative;
+		margin-bottom: 8px;
+		border-radius: 20px;
+		background-color: #fff;
+		transition: all 200ms ease-in-out;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.accordion-button {
+		border: none;
+		margin: 0 auto;
+		font-size: 20px;
+		font-weight: 500;
+		position: relative;
+		letter-spacing: -0.5px;
+		padding: 23px 24px 21px;
+		font-family: var(--nx-heading);
+		span {
+			gap: 12px;
+			display: flex;
+			color: #000014;
+			align-items: center;
+			@media #{$xs,$xxs} {
+				flex-wrap: wrap;
+			}
+		}
+		i {
+			margin-right: 10px;
+			font-style: normal;
+		}
+	}
+
+	.accordion-button:focus {
+		box-shadow: none;
+	}
+	.accordion-body {
+		padding: 0;
+		font-size: 18px;
+		border-top: 1px solid #E9E9E9;
+		transition: all 500ms ease-in-out;
+		.bi-faq-text {
+			color: #474747;
+			max-width: 730px;
+			font-weight: 400;
+			padding-top: 22px;
+			padding-left: 24px;
+			padding-bottom: 24px;
+			@media #{$xs,$xxs} {
+				padding-left: 0;
+			}
+		}
+	}
+	.accordion-button::after {
+		content: '\2b';
+		font-weight: 900;
+		background-image: none;
+		font-family: 'FontAwesome';
+		color: var(--nx-title-color);
+	}
+	.accordion-button:not(.collapsed) { 
+		i {
+			display: none;
+		}
+		&:after {
+			content: '\f068';
+		}
+	}
+}
+
+.nx-faq-cta-card {
+	padding: 40px;
+	max-width: 505px;
+	border-radius: 32px;
+	background-color: #fff;
+	border: 1px solid #E9E9E9;
+	.nx-fq-icon {
+		top: -25px;
+		right: -50px;
+	}
+	.item-img {
+		width: 72px;
+		height: 72px;
+		overflow: hidden;
+		margin-bottom: 30px;
+		border-radius: 16px;
+	}
+	.item-text {
+		h3 {
+			font-weight: 500;
+			font-size: 32px;
+			line-height: 1.2;
+			padding-bottom: 10px;
+			letter-spacing: -1px;
+			color: rgba(0, 0, 0, 0.8);
+			span {
+				color: #474747;
+				display: block;
+			}
+		}
+		p {
+			padding-bottom: 28px;
+		}
+	}
+	.btn-grp {
+		gap: 20px;
+		.cta_btn {
+			color: #474747;
+			font-size: 19px;
+			font-weight: 600;
+		}
+	}
+}

@@ -476,8 +476,8 @@ Last change:    00/00/00
 		var nxGTImg = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".nx-gt-content",
-				start: "top 40%",
-				end: "+=600",
+				start: "top 30%",
+				end: "+=700",
 				toggleActions: "play none none reverse",
 				scrub: true,
 				markers: false,
@@ -531,6 +531,48 @@ Last change:    00/00/00
 		});
 	}
 
+
+	if ($('.nx-blog-slider').length > 0 ) {
+		var slider = new Swiper('.nx-blog-slider', {
+			spaceBetween: 24,
+			slidesPerView: 3,
+			loop: true,
+			autoplay: {
+				enabled: true,
+				delay: 6000
+			},
+			speed: 1000,
+			pagination: {
+				el: ".nx-blg-pagi",
+				clickable: true,
+			},
+			navigation: {
+				nextEl: ".nx-blg-right",
+				prevEl: ".nx-blg-left",
+			},
+			breakpoints: {
+				'1200': {
+					slidesPerView: 3,
+				},
+				'840': {
+					slidesPerView: 2,
+					spaceBetween: 24,
+				},
+				'576': {
+					slidesPerView: 1,
+					spaceBetween: 24,
+				},
+				'480': {
+					slidesPerView: 1,
+					spaceBetween: 24,
+				},
+				'0': {
+					slidesPerView: 1,
+					spaceBetween: 24,
+				},
+			},
+		});
+	};
 
 
 })(jQuery);
