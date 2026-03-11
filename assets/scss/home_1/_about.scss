@@ -6,6 +6,17 @@
 	}
 }
 
+@keyframes slideRight {
+	from {
+		opacity: 0;
+		transform: translateX(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
 .nx-ab1-sticky {
 	top: 60px;
 	position: sticky;
@@ -41,7 +52,10 @@
 }
 
 .nx-ab1-count-shape {
-	margin-bottom: 85px;	
+	margin-bottom: 85px;
+	img {
+		animation: spin 8s linear infinite;	
+	}
 	@media #{$lg,$md,$sm,$xs,$xxs} {
 		margin-bottom: 30px;
 	}
@@ -102,6 +116,9 @@
 		span {
 			color: #474747;
 			display: inline;
+		}
+		.split-line {
+			display: inline-block !important;
 		}
 	}
 }
@@ -190,6 +207,24 @@
 	flex-wrap: wrap;
 	.nx-ab1-author {
 		gap: 16px;
+		.item-img {
+			.item-shape {
+				svg {
+					opacity: 0;
+					transform: translateX(40px);
+					animation: slideRight 3s ease infinite;
+					&:nth-child(1) {
+						animation-delay: 0.2s;
+					}
+					&:nth-child(2) {
+						animation-delay: 0.5s;
+					}
+					&:nth-child(3) {
+						animation-delay: 0.8s;
+					}
+				}
+			}
+		}
 		.ath-img {
 			width: 62px;
 			height: 62px;

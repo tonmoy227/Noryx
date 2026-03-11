@@ -293,15 +293,28 @@ a {
 	overflow: hidden;
 }
 
+
+@keyframes shake {
+	0% { transform: translateX(0); }
+	20% { transform: translateX(-2px); }
+	40% { transform: translateX(2px); }
+	60% { transform: translateX(-2px); }
+	80% { transform: translateX(2px); }
+	100% { transform: translateX(0); }
+}
+
 .nx-btn1 {
 	display: inline-block;
 	a {
 		gap: 8px;
+		z-index: 1;
 		display: flex;
 		border-radius: 12px;
 		align-items: center;
+		position: relative;
 		background-color: #fff;
 		padding: 2px 16px 2px 2px;
+		
 		i {
 			width: 40px;
 			height: 40px;
@@ -309,6 +322,7 @@ a {
 			align-items: center;
 			border-radius: 12px;
 			justify-content: center;
+			transition: all 300ms ease-in-out;
 			background-color: var(--nx-prime-c);
 		}
 		span {
@@ -316,13 +330,23 @@ a {
 			font-size: 17px;
 			font-weight: 500;
 			white-space: nowrap;
-			font-family: var(--nx-heading);
+		}
+		&:hover {
+			i {
+				animation: shake 0.6s ease-in-out;
+			}
 		}
 	}
 	&:is(.ver_2) {
 		a {
 			background-color: #000000;
 			padding: 4px 16px 4px 4px;
+			&:before {
+				top: 4px;
+				left: 4px;
+				width: 44px;
+				height: 44px;
+			}
 			i {
 				width: 44px;
 				height: 44px;
@@ -344,6 +368,7 @@ a {
 			}
 		}
 	}
+
 }
 
 .nx-sec-title1 {

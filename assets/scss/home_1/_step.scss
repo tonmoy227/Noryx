@@ -1,14 +1,27 @@
 .nx-step1-sec {
 	height: 1200px;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		height: auto;
+	}
 	.nx-sec-title1 {
 		text-align: right;
 		max-width: 440px;
+		@media #{$lg,$md,$sm,$xs,$xxs} {
+			margin: 0 auto;
+			text-align: center;
+		}
 		.sec_title {
 			line-height: 1.1;
 			max-width: 320px;
+			@media #{$lg,$md,$sm,$xs,$xxs} {
+				max-width: 100%;
+			}
 		}
 		.item-title {
 			direction: rtl;
+			@media #{$lg,$md,$sm,$xs,$xxs} {
+				direction: inherit;
+			}
 		}
 		p {
 			padding-top: 10px;
@@ -17,6 +30,9 @@
 }
 .nx-step1-area {
 	padding-bottom: 260px;
+	@media #{$xxs} {
+		padding-bottom: 120px;
+	}
 }
 .nx-step1-area {
 	position: relative;
@@ -24,11 +40,19 @@
 
 .nx-step1-content {
 	gap: 40px 80px;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+	}
 }
 
 .nx-step1-wrapper {
 	gap: 24px;
 	margin-right: -40%;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		margin-right: 0;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
 
 .nx-step1-item {
@@ -60,6 +84,9 @@
 		background-color: #fff;
 		transition: all 500ms ease-in-out;
 		clip-path: polygon( 4.762% 0.156%,9.975% 0.156%,9.975% 0.156%,10.434% 0.186%,10.883% 0.274%,11.321% 0.418%,11.744% 0.616%,12.15% 0.866%,12.536% 1.167%,12.898% 1.515%,13.235% 1.91%,13.542% 2.349%,13.818% 2.831%,15.747% 6.564%,15.747% 6.564%,16.037% 7.07%,16.36% 7.531%,16.714% 7.946%,17.095% 8.313%,17.5% 8.629%,17.927% 8.892%,18.372% 9.1%,18.832% 9.251%,19.305% 9.344%,19.787% 9.375%,28.725% 9.375%,28.725% 9.375%,29.207% 9.344%,29.68% 9.251%,30.14% 9.1%,30.585% 8.892%,31.012% 8.629%,31.417% 8.313%,31.798% 7.946%,32.152% 7.531%,32.475% 7.07%,32.765% 6.564%,34.694% 2.831%,34.694% 2.831%,34.97% 2.349%,35.277% 1.91%,35.614% 1.515%,35.976% 1.167%,36.362% 0.866%,36.768% 0.616%,37.191% 0.418%,37.629% 0.274%,38.078% 0.186%,38.537% 0.156%,95.238% 0.156%,95.238% 0.156%,95.991% 0.236%,96.706% 0.467%,97.372% 0.836%,97.98% 1.332%,98.521% 1.941%,98.985% 2.651%,99.363% 3.45%,99.644% 4.324%,99.82% 5.262%,99.881% 6.25%,99.881% 93.75%,99.881% 93.75%,99.82% 94.738%,99.644% 95.676%,99.363% 96.55%,98.985% 97.349%,98.521% 98.059%,97.98% 98.668%,97.372% 99.164%,96.706% 99.533%,95.991% 99.764%,95.238% 99.844%,4.762% 99.844%,4.762% 99.844%,4.009% 99.764%,3.294% 99.533%,2.628% 99.164%,2.02% 98.668%,1.479% 98.059%,1.015% 97.349%,0.637% 96.55%,0.356% 95.676%,0.18% 94.738%,0.119% 93.75%,0.119% 6.25%,0.119% 6.25%,0.18% 5.262%,0.356% 4.324%,0.637% 3.45%,1.015% 2.651%,1.479% 1.941%,2.02% 1.332%,2.628% 0.836%,3.294% 0.467%,4.009% 0.236%,4.762% 0.156% );
+		@media #{$xxs} {
+			clip-path: none;
+		}
 	}
 	&:after {
 		opacity: 0;
@@ -72,6 +99,10 @@
 		margin-left: 55px;
 		color: var(--nx-title-color);
 		font-family: var(--nx-heading);
+		@media #{$xxs} {
+			margin-left: 0px;
+			margin-top: 25px;
+		}
 	}
 	.item-btn {
 		padding-right: 4px;
@@ -108,7 +139,8 @@
 			transition: all 300ms ease-in-out;
 		}
 	}
-	&:hover {
+	&:hover,
+	&:is(.active) {
 		&:before {
 			opacity: 0;
 		}
@@ -143,4 +175,9 @@
 	letter-spacing: -26px;
 	color: var(--nx-prime-c);
 	font-family: var(--nx-heading);
+	@media #{$xxs} {
+		bottom: -15px;
+		font-size: 100px;
+		letter-spacing: -4px;
+	}
 }

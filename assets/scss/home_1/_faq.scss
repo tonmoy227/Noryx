@@ -3,11 +3,17 @@
 	max-width: 783px;
 	.nx-sec-title1 {
 		max-width: 437px;
+		@media #{$md,$sm,$xs,$xxs} {
+			max-width: 100%;
+		}
 	}
 }
 
 .nx-faq-content {
 	gap: 40px;
+	@media #{$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+	}
 }
 
 .nx-faq-accordion {
@@ -65,11 +71,9 @@
 			max-width: 730px;
 			font-weight: 400;
 			padding-top: 22px;
+			padding-right: 24px;
 			padding-left: 24px;
 			padding-bottom: 24px;
-			@media #{$xs,$xxs} {
-				padding-left: 0;
-			}
 		}
 	}
 	.accordion-button::after {
@@ -95,6 +99,9 @@
 	border-radius: 32px;
 	background-color: #fff;
 	border: 1px solid #E9E9E9;
+	@media #{$md,$sm,$xs,$xxs} {
+		max-width: 100%;
+	}
 	.nx-fq-icon {
 		top: -25px;
 		right: -50px;

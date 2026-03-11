@@ -3,6 +3,9 @@
 	margin: 0 auto;
 	max-width: 550px;
 	padding-top: 140px;
+	@media #{$sm,$xs,$xxs} {
+		padding-top: 0;
+	}
 	.nx-sec-title1 {
 		.sec_title {
 			margin: 0 auto;
@@ -17,6 +20,9 @@
 .nx-gt-content {
 	z-index: 1;
 	height: 735px;
+	@media #{$xxl,$xl,$lg,$md,$sm,$xs,$xxs} {
+		height: auto;
+	}
 	.nx-gt-shape {
 		top: 0;
 		left: 0;
@@ -25,6 +31,9 @@
 		margin: 0 auto;
 		max-width: 716px;
 		text-align: center;
+		@media #{$sm,$xs,$xxs} {
+			display: none;
+		}
 		&:before {
 			left: 0;
 			right: 0;
@@ -39,10 +48,12 @@
 }
 
 .nx-gt-img {
-
 	overflow: hidden;
 	position: absolute;
 	border-radius: 32px;
+	@media #{$xxl,$xl,$lg,$md,$sm,$xs,$xxs} {
+		display: none;
+	}
 	&:is(.nx-gt-img1) {
 		top: 17%;
 		left: 38%;
@@ -100,6 +111,9 @@
 	gap: 24px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	@media #{$xxl,$xl,$lg,$md,$sm,$xs,$xxs} {
+		grid-template-columns: 1fr;
+	}
 }
 
 .nx-get-in-form {
@@ -109,6 +123,9 @@
 	max-width: 668px;
 	border-radius: 32px;
 	background-color: #000000;
+	@media #{$xxl,$xl,$lg,$md,$sm,$xs,$xxs} {
+		max-width: 100%;
+	}
 	.nx-get-in-shape {
 		top: -28%;
 		right: -34%;
@@ -183,6 +200,9 @@
 		display: grid;
 		margin-bottom: 24px;
 		grid-template-columns: 1fr 1fr;
+		@media #{$sm,$xs,$xxs} {
+			grid-template-columns: 1fr;
+		}
 	}
 	.nx-ab1-mis-bottom .nx-ab1-author .item-text h3 {
 		color: #fff;

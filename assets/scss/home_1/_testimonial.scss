@@ -145,25 +145,48 @@
 }
 
 .nx-testi1-item-wrap1 {
+	@media #{$sm,$xs,$xxs} {
+		gap: 30px;
+		flex-wrap: wrap;
+		justify-content: center !important;
+	}
 	.nx-testi1-item {
 		&:nth-child(2) {
 			margin-top: 180px;
+			@media #{$sm,$xs,$xxs} {
+				margin-top: 20px;
+			}
 		}
 	}
 }
 .nx-testi1-item-wrap2 {
+	@media #{$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+		justify-content: center !important;
+	}
 	.nx-testi1-item {
 		&:nth-child(1) {
 			margin-top: 180px;
+			@media #{$sm,$xs,$xxs} {
+				margin-top: 20px;
+			}
 		}
 	}
 }
 
 .nx-testi1-item-wrap3 {
 	margin-top: 180px;
+	@media #{$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+		margin-top: 20px;
+		justify-content: center !important;
+	}
 	.nx-testi1-item {
 		&:nth-child(1) {
 			margin-top: 180px;
+			@media #{$sm,$xs,$xxs} {
+				margin-top: 20px;
+			}
 		}
 	}
 }
@@ -178,6 +201,10 @@
 .nx-testi1-marquee {
 	margin-top: 250px;
 	margin-bottom: 550px;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
 	h3 {
 		color: #fff;
 		font-size: 260px;
@@ -186,5 +213,9 @@
 		display: inline-block;
 		letter-spacing: -10px;
 		text-transform: uppercase;
+		@media #{$sm,$xs,$xxs} {
+			font-size: 120px;
+			letter-spacing: -5px;
+		}
 	}
 }

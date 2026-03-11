@@ -147,6 +147,10 @@
 			background: #FFFFFF26;
 			justify-content: center;
 			border: 1px solid #FFFFFF1A;
+			&:hover {
+				color: #fff;
+				background-color: var(--nx-prime-c);
+			}
 		}
 	}
 	&:is(._1) {
