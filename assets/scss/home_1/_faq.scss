@@ -77,18 +77,17 @@
 		}
 	}
 	.accordion-button::after {
-		content: '\2b';
-		font-weight: 900;
-		background-image: none;
-		font-family: 'FontAwesome';
-		color: var(--nx-title-color);
+		content: '';
+		width: 22px;
+		height: 22px;
+		background-image: url(../img/icon/ic11.svg);
 	}
 	.accordion-button:not(.collapsed) { 
 		i {
 			display: none;
 		}
 		&:after {
-			content: '\f068';
+			background-image: url(../img/icon/ic12.png);
 		}
 	}
 }

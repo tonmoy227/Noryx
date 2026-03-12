@@ -41,4 +41,49 @@
 			}
 		}
 	}
+	&:is(.header_style_two) {
+		.nx-header-content {
+			margin: 0 auto;
+			padding: 0px 15px;
+			max-width: 1710px;
+			.brand-logo {
+				padding-top: 20px;
+			}
+			.hd-hire {
+				color: #fff;
+				font-size: 17px;
+				font-weight: 500;
+				padding-left: 20px;
+				position: relative;
+				&:before {
+					left: 0;
+					top: 6px;
+					width: 10px;
+					content: '';
+					height: 10px;
+					border-radius: 100%;
+					position: absolute;
+					background-color: var(--nx-prime-c);
+				}
+			}
+			.nx-ofcanvas-btn {
+				gap: 12px;
+				padding-top: 15px;
+				span {
+					color: #fff;
+					font-size: 18px;
+					font-weight: 600;
+				}
+				.of-icon {
+					width: 44px;
+					height: 44px;
+					display: flex;
+					border-radius: 100%;
+					align-items: center;
+					justify-content: center;
+					background-color: var(--nx-prime-c);
+				}
+			}
+		}
+	}
 }

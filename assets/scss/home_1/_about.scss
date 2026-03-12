@@ -226,9 +226,11 @@
 			}
 		}
 		.ath-img {
+			z-index: 1;
 			width: 62px;
 			height: 62px;
 			overflow: hidden;
+			position: relative;
 			border-radius: 100%;
 		}
 		.item-text {

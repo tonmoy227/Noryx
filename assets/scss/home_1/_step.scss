@@ -18,9 +18,10 @@
 			}
 		}
 		.item-title {
-			direction: rtl;
+			display: flex;
+			justify-content: end;
 			@media #{$lg,$md,$sm,$xs,$xxs} {
-				direction: inherit;
+				justify-content: center;
 			}
 		}
 		p {
@@ -139,7 +140,6 @@
 			transition: all 300ms ease-in-out;
 		}
 	}
-	&:hover,
 	&:is(.active) {
 		&:before {
 			opacity: 0;
