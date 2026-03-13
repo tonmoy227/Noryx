@@ -185,6 +185,7 @@ body::-webkit-scrollbar-thumb {
 
 .home-2 {
   background-color: #080808;
+  color: rgba(228, 228, 228, 0.8);
 }
 
 .ul-li ul {
@@ -658,6 +659,28 @@ a:hover, a:focus {
   font-weight: 700;
   line-height: 1.27;
   letter-spacing: -2px;
+}
+.nx-sec-title1:is(.ver_2) .subtitle {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  border-radius: 100px;
+  background-color: #1B1B1B;
+  padding: 6px 15px 6px 35px;
+}
+.nx-sec-title1:is(.ver_2) .subtitle:before {
+  top: 13px;
+  left: 15px;
+  width: 10px;
+  content: "";
+  height: 10px;
+  position: absolute;
+  border-radius: 100%;
+  background-color: var(--nx-prime-c);
+}
+.nx-sec-title1:is(.ver_2) .sec_title {
+  color: #fff;
 }
 
 .mt-5 {
@@ -5511,6 +5534,8 @@ a:hover, a:focus {
   left: auto;
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
+  background: -webkit-gradient(linear, left top, right top, color-stop(1.27%, #0F0E10), color-stop(20.92%, #100E0F), color-stop(39.92%, #0E0E0F), color-stop(60.34%, rgba(14, 13, 14, 0.98)), color-stop(80.28%, rgba(14, 13, 14, 0.5)), color-stop(90.29%, rgba(14, 13, 14, 0.3)), to(rgba(14, 13, 14, 0)));
+  background: linear-gradient(90deg, #0F0E10 1.27%, #100E0F 20.92%, #0E0E0F 39.92%, rgba(14, 13, 14, 0.98) 60.34%, rgba(14, 13, 14, 0.5) 80.28%, rgba(14, 13, 14, 0.3) 90.29%, rgba(14, 13, 14, 0) 100%);
 }
 .nx-hero2-social a {
   margin: 0px 4px;
@@ -5522,6 +5547,7 @@ a:hover, a:focus {
   font-size: 340px;
   font-weight: 700;
   margin-top: 85px;
+  margin-bottom: -10px;
   letter-spacing: -10px;
   font-family: var(--nx-heading);
 }
@@ -5564,6 +5590,7 @@ a:hover, a:focus {
 .nx-start-project .nx-start-up .item-text a {
   width: 100%;
   padding: 10px;
+  color: #000000;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
@@ -5581,9 +5608,213 @@ a:hover, a:focus {
   background-color: #fff;
 }
 .nx-start-project .nx-start-down p {
+  color: #000000;
   font-size: 16px;
   max-width: 120px;
   font-weight: 500;
+}
+.nx-start-project .nx-st-client ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.nx-start-project .nx-st-client li {
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  margin-left: -18px;
+  border-radius: 100%;
+  border: 2px solid #FFFFFF;
+}
+.nx-start-project .nx-st-client li:first-child {
+  margin-left: 0;
+}
+.nx-start-project .nx-st-client li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*---------------------------------------------------- */
+/*Service area*/
+/*----------------------------------------------------*/
+.nx-ser2-top .nx-sec-title1 {
+  max-width: 580px;
+}
+.nx-ser2-top .item-desc {
+  max-width: 395px;
+}
+.nx-ser2-top .item-desc p {
+  color: #fff;
+  padding-bottom: 25px;
+}
+
+.nx-ser2-content {
+  gap: 24px;
+}
+
+.nx-ser2-item {
+  height: 420px;
+  width: 322px;
+  position: relative;
+  border-radius: 32px;
+  background-color: #131313;
+  border: 1px solid #202020;
+  padding: 12px;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.nx-ser2-item .front-part {
+  width: 100%;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.nx-ser2-item .front-part .item-icon {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.nx-ser2-item .front-part .item-text {
+  text-align: center;
+}
+.nx-ser2-item .front-part .item-text h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 24px;
+  letter-spacing: -1px;
+  background-color: #1A1A1A;
+}
+.nx-ser2-item .front-part .item-text h3 a {
+  padding: 20px 24px;
+}
+.nx-ser2-item .back-part {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  position: absolute;
+  visibility: hidden;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transform: perspective(1000px) rotateX(-90deg);
+          transform: perspective(1000px) rotateX(-90deg);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.nx-ser2-item .back-part .item-icon {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.nx-ser2-item .back-part .item-text {
+  max-width: 316px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.nx-ser2-item .back-part .item-text .title-text {
+  border-radius: 32px;
+  padding: 24px 24px 22px;
+  background-color: #1A1A1A;
+}
+.nx-ser2-item .back-part .item-text .title-text h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  padding-bottom: 8px;
+}
+.nx-ser2-item .back-part .item-text .title-text p {
+  opacity: 0.8;
+  color: #E4E4E4;
+  padding-bottom: 28px;
+}
+.nx-ser2-item .back-part .item-text .item-tag a {
+  margin: 2px;
+  color: #E4E4E4;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 32px;
+  letter-spacing: -0.5px;
+  background-color: #202020;
+}
+.nx-ser2-item .back-part .item-text .item-tag a:hover {
+  color: #fff;
+  background-color: var(--nx-prime-c);
+}
+.nx-ser2-item .back-part .item-img {
+  overflow: hidden;
+  border-radius: 32px;
+}
+.nx-ser2-item:is(.active) {
+  width: 668px;
+}
+.nx-ser2-item:is(.active) .front-part {
+  opacity: 0;
+}
+.nx-ser2-item:is(.active) .back-part {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+  -webkit-transform: rotateX(0) rotateY(0deg);
+          transform: rotateX(0) rotateY(0deg);
+}
+
+/*---------------------------------------------------- */
+/*Who we area*/
+/*----------------------------------------------------*/
+.nx-who-we-counter {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 24px 50px;
+  max-width: 900px;
+  -ms-grid-columns: 1fr 50px 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nx-who-w-count-item .item-title {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid #282828;
+}
+.nx-who-w-count-item .item-title h3 {
+  color: #fff;
+  line-height: 1;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.nx-who-w-count-item .item-text h3 {
+  color: #fff;
+  max-width: 145px;
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+.nx-who-w-count-item .item-text h3 sup {
+  top: -30px;
+  margin-left: 8px;
+  line-height: 0.7;
+  font-size: 48px;
+  letter-spacing: -1px;
+  color: var(--nx-prime-c);
+}
+.nx-who-w-count-item .item-text p {
+  font-size: 16px;
+  max-width: 160px;
+  letter-spacing: -0.5px;
 }
 
 /*---------------------------------------------------- */

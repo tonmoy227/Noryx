@@ -68,6 +68,7 @@ body::-webkit-scrollbar-thumb {
 }
 .home-2 {
 	background-color: #080808;
+	color: rgba(228, 228, 228, .8);
 }
 .ul-li ul {
 	margin: 0;
@@ -390,6 +391,30 @@ a {
 		font-weight: 700;
 		line-height: 1.27;
 		letter-spacing: -2px;
+	}
+	&:is(.ver_2) {
+		.subtitle {
+			color: #fff;
+			font-weight: 500;
+			position: relative;
+			display: inline-block;
+			border-radius: 100px;
+			background-color: #1B1B1B;
+			padding: 6px 15px 6px 35px;
+			&:before {
+				top: 13px;
+				left: 15px;
+				width: 10px;
+				content: '';
+				height: 10px;
+				position: absolute;
+				border-radius: 100%;
+				background-color: var(--nx-prime-c);
+			}
+		}
+		.sec_title {
+			color: #fff;
+		}
 	}
 }
 

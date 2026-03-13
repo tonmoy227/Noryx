@@ -873,4 +873,12 @@ Last change:    00/00/00
 		});
 	}
 
+
+	$('.nx_item_active').on('mouseover', function () {
+		var $group = $(this).closest('[data-nx-group]');
+		$group.find('.nx_item_active').removeClass('active');
+		$(this).addClass('active');
+	}); 
+
+
 })(jQuery);
