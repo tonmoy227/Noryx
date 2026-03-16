@@ -1,0 +1,53 @@
+.nx-who-we-sec {
+	z-index: 1;
+	.nx-who-shape {
+		right: 0;
+		left: -40%;
+		z-index: -1;
+		width: 3600px;
+		bottom: -420%;
+		height: 3600px;
+		margin: 0 auto;
+		filter: blur(54px);
+		border-radius: 100%;
+		background-color: var(--nx-prime-c);
+	}
+}
+
+.nx-pro2-content {
+	z-index: 2;
+	display: grid;
+	gap: 32px 24px;
+	position: relative;
+	grid-template-columns: 1fr 1fr;
+}
+
+.nx-pro2-item {
+	.item-img {
+		overflow: hidden;
+		border-radius: 32px;
+		margin-bottom: 22px;
+	}
+	.title-pro {
+		h3 {
+			color: #fff;
+			font-size: 24px;
+			font-weight: 700;
+			padding-bottom: 8px;
+			letter-spacing: -1px;
+		}
+		span {
+			color: #E4E4E4;
+			font-size: 16px;
+			font-weight: 500;
+		}
+	}
+	.more_btn {
+		gap: 8px;
+		color: #E4E4E4;
+		display: flex;
+		font-size: 16px;
+		font-weight: 500;
+		align-items: center;
+	}
+}

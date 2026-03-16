@@ -1,3 +1,7 @@
+.nx-who-we-sec {
+	background-color: #111111;
+}
+
 .nx-who-we-counter {
 	width: 100%;
 	display: grid;
@@ -116,6 +120,15 @@
 					color: #E4E4E4;
 				}
 			}
+		}
+	}
+	.nx-whw-text {
+		max-width: 347px;
+		p {
+			opacity: .8;
+			color: #FFFFFF;
+			font-size: 18px;
+			letter-spacing: -1px;
 		}
 	}
 }

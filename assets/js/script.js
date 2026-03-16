@@ -118,6 +118,18 @@ Last change:    00/00/00
 		startVisible:true,
 	});
 
+
+	$('.marquee-left').marquee({
+		gap: 0,
+		speed: 40,
+		delayBeforeStart: 0,
+		direction: 'right',
+		duplicated: true,
+		pauseOnHover: false,
+		startVisible:true,
+	});
+
+
 	$('.marquee-right2').marquee({
 		gap: 0,
 		speed: 40,
@@ -879,6 +891,37 @@ Last change:    00/00/00
 		$group.find('.nx_item_active').removeClass('active');
 		$(this).addClass('active');
 	}); 
+
+
+
+	if (window.matchMedia("(min-width: 1600px)").matches) {
+		var nxPro = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".nx-pro2-content",
+				start: "top 100%",
+				end: "top 10%",
+				toggleActions: "play none none reverse",
+				scrub: true,
+				markers: false,
+			}
+
+		});
+
+		nxPro
+		.from( ".nx-pro2-item:nth-child(1)" , {x: 0,y: -800,rotate: -8, scale: 0.65, duration: 3, ease: "power1.out" })
+		.from( ".nx-pro2-item:nth-child(2)" , {x: -692,y: -790,rotate: 8, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
+		.from( ".nx-pro2-item:nth-child(3)" , {x: 0,y: -1318,rotate: -4, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
+		.from( ".nx-pro2-item:nth-child(4)" , {x: -692,y: -1318,rotate: 4, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
+		.from( ".nx-pro2-item:nth-child(1) .item-text" , {opacity: 0, ease: "power1.out" })
+		.from( ".nx-pro2-item:nth-child(2) .item-text" , {opacity: 0, ease: "power1.out" })
+		.from( ".nx-pro2-item:nth-child(3) .item-text" , {opacity: 0, ease: "power1.out" })
+		.from( ".nx-pro2-item:nth-child(4) .item-text" , {opacity: 0, ease: "power1.out" })
+
+	}
+
+
+
+
 
 
 })(jQuery);
