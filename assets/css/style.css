@@ -6303,6 +6303,108 @@ a:hover, a:focus {
 }
 
 /*---------------------------------------------------- */
+/*work process area*/
+/*----------------------------------------------------*/
+.nx-work-p2-part1 {
+  max-width: 555px;
+}
+.nx-work-p2-part1 .nx-sec-title1 p {
+  max-width: 480px;
+}
+
+.nx-work-p2-item {
+  padding: 32px;
+  border-radius: 24px;
+  margin-bottom: 24px;
+  border: 5px solid #202020;
+  background-color: #000000;
+}
+.nx-work-p2-item .side-circle1 {
+  top: -25px;
+  right: -45px;
+  width: 100px;
+  height: 100px;
+  -webkit-filter: blur(50px);
+          filter: blur(50px);
+  border-radius: 100%;
+  background-color: var(--nx-prime-c);
+}
+.nx-work-p2-item .side-circle2 {
+  bottom: -65px;
+  opacity: 0.5;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  -webkit-filter: blur(50px);
+          filter: blur(50px);
+  border-radius: 100%;
+  background-color: var(--nx-prime-c);
+}
+.nx-work-p2-item .item-top {
+  margin-bottom: 35px;
+}
+.nx-work-p2-item .item-top .inner-icon {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922) inset;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922) inset;
+  border: 1px solid transparent;
+  background: linear-gradient(#212227, #212227) padding-box, linear-gradient(225deg, #FD3F00 0%, rgba(253, 63, 0, 0) 15.32%, rgba(253, 63, 0, 0) 49.69%, rgba(253, 63, 0, 0) 84.84%, #FD3F00 100%) border-box;
+}
+.nx-work-p2-item .item-top .inner-icon:before, .nx-work-p2-item .item-top .inner-icon:after {
+  top: -15px;
+  left: -15px;
+  width: 37px;
+  content: "";
+  height: 15px;
+  position: absolute;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  -webkit-transform: rotate(-34.16deg);
+          transform: rotate(-34.16deg);
+  background-color: var(--nx-prime-c);
+}
+.nx-work-p2-item .item-top .inner-icon:after {
+  top: auto;
+  left: auto;
+  right: -15px;
+  bottom: -15px;
+}
+.nx-work-p2-item .item-top .inner-stage {
+  color: #fff;
+  font-size: 16px;
+  padding: 7px 14px;
+  border-radius: 12px;
+  letter-spacing: -0.5px;
+  border: 1px solid transparent;
+  background: linear-gradient(#212227, #212227) padding-box, linear-gradient(225deg, #FD3F00 0%, rgba(253, 63, 0, 0) 15.32%, rgba(253, 63, 0, 0) 49.69%, rgba(253, 63, 0, 0) 84.84%, #FD3F00 100%) border-box;
+}
+.nx-work-p2-item .item-text h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+.nx-work-p2-item .item-text p {
+  color: #E4E4E4;
+  max-width: 440px;
+  padding-bottom: 24px;
+}
+.nx-work-p2-item .item-text .item-tag a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background-color: #fff;
+  letter-spacing: -0.5px;
+  background-color: #1C1C1C;
+}
+
+/*---------------------------------------------------- */
 /*Footer Section*/
 /*----------------------------------------------------*/
 .nx-ftr-sec {
