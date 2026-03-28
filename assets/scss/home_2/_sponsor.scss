@@ -1,0 +1,45 @@
+.nx-spon2-content {
+	gap: 16px;
+	.nx-spon2-text {
+		max-width: 185px;
+		h3 {
+			color: #fff;
+			font-size: 24px;
+			line-height: 1.2;
+			font-weight: 700;
+			white-space: nowrap;
+			letter-spacing: -1px;
+		}
+	}
+}
+
+.nx-spon2-logos {
+	max-width: 1015px;
+	position: relative;
+	&:before,
+	&:after {
+		top: 0;
+		left: 0;
+		z-index: 2;
+		width: 80px;
+		content: '';
+		height: 100%;
+		position: absolute;
+		background: linear-gradient(90deg, #080808 0%, #080808 14.75%, #080808 30.01%, #080808 45.27%, #080808 60.26%, rgba(8, 8, 8, 0.96) 75.24%, rgba(8, 8, 8, 0.9) 87.78%, rgba(8, 8, 8, 0) 100%);
+	}
+	&:after {
+		right: 0;
+		left: auto;
+		transform: rotate(-180deg);
+	}
+}
+.nx-spon2-img {
+	margin: 0px 20px;
+	display: inline-block;
+	.item-img {
+		height: 38px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

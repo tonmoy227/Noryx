@@ -1,0 +1,80 @@
+.nx-faq2-text {
+	max-width: 577px;
+	.nx-sec-title1 {
+		.sec_title {
+			line-height: 1;
+			font-size: 72px;
+		}
+		p {
+			max-width: 430px;
+			letter-spacing: -.5px;
+			color: rgba(228, 228, 228, 0.8);
+			span {
+				display: inline;
+				color: rgba(255, 255, 255, 1);
+			}
+		}
+	}
+}
+
+.nx-faq2-bottom {
+	p {
+		max-width: 360px;
+		font-size: 18px;
+		color: #E4E4E4E5;
+		letter-spacing: -.5px;
+	}
+	.nx-ab1-mis-bottom .nx-ab1-author .item-text h3 {
+		color: #fff;
+	}
+	.nx-btn1 {
+		a {
+			color: #fff;
+			padding: 4px 16px 4px 4px;
+			background-color: var(--nx-prime-c);
+			i {
+				width: 44px;
+				height: 44px;
+				background-color: #fff;
+			}
+			span {
+				color: #fff;
+			}
+		}
+	}
+}
+
+.nx-faq2-accordion {
+	width: 100%;
+	max-width: 668px;
+	.accordion-item,
+	.accordion-button {
+		background-color: #0D0D0D;
+		background-color: transparent;
+		transition: all 200ms ease-in-out;
+		border: 1px solid #222222CC;
+	}
+	.accordion-button {
+		border: none;
+		span {
+			color: #fff;
+		}
+	}
+	.accordion-body {
+		border-top: 1px solid #222222CC;
+		.bi-faq-text {
+			color: #E4E4E4;
+		}
+	}
+	.accordion-button:not(.collapsed) {
+		box-shadow: none;
+	}
+	.accordion-button::after {
+		background-image: url(../img/icon/ic20.svg);
+	}
+	.accordion-button:not(.collapsed) { 
+		&:after {
+			background-image: url(../img/icon/ic21.svg);
+		}
+	}
+}

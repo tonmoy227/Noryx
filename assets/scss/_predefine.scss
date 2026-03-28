@@ -392,6 +392,9 @@ a {
 		line-height: 1.27;
 		letter-spacing: -2px;
 	}
+	p {
+		padding-top: 10px;
+	}
 	&:is(.ver_2) {
 		.subtitle {
 			color: #fff;

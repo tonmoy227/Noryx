@@ -1,0 +1,138 @@
+.nx-price2-content {
+	gap: 24px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nx-price2-btn {
+	gap: 12px;
+	.nav-tabs {
+		padding: 4px;
+		border-radius: 32px;
+		background-color: #141414;
+		.nav-link,
+		.nav-link.active  {
+			color: #fff;
+			font-weight: 500;
+			padding: 6px 14px;
+			border-radius: 32px;
+			font-family: var(--nx-heading);
+			transition: all 300ms ease-in-out;
+		}
+		.nav-link.active {
+			background-color: #000000;
+		}
+	}
+	span {
+		color: #fff;
+		font-weight: 500;
+		letter-spacing: -0.5px;
+		font-family: var(--nx-heading);
+	}
+}
+
+
+.nx-price2-item {
+	z-index: 1;
+	padding: 8px;
+	overflow: hidden;
+	max-width: 437px;
+	border-radius: 32px;
+	background-color: #000000;
+	border: 1px solid #222222;
+	.item-bg {
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	.inner-item {
+		border: 32px;
+	}
+	.item-top {
+		padding: 32px;
+		border-radius: 24px;
+		background-color: #141414;
+	}
+	.item-bottom {
+		padding: 32px 32px 32px 20px;
+	}
+	.item-title {
+		padding-bottom: 20px;
+		h3 {
+			color: #fff;
+			font-size: 22px;
+			font-weight: 700;
+			padding-bottom: 12px;
+		}
+		p {
+			opacity: .8;
+			color: #E4E4E4;
+		}
+	}
+	.item-btn {
+		margin-top: 24px;
+		a {
+			color: #fff;
+			width: 100%;
+			padding: 14px;
+			text-align: center;
+			border-radius: 15px;
+			background-color: #000000;
+		}
+	}
+	.item-desc {
+		h4 {
+			color: #fff;
+			font-size: 18px;
+			font-weight: 500;
+			padding-bottom: 5px;
+			letter-spacing: -0.5px;
+		}
+		p {
+			color: #E4E4E4CC;
+			span {
+				color: #fff;
+				font-weight: 600;
+			}
+		}
+	}
+	.item-price {
+		h2 {
+			color: #fff;
+			font-size: 40px;
+			font-weight: 700;
+			span {
+				color: #E4E4E4;
+				font-size: 16px;
+				font-weight: 400;
+			}
+		}
+	}
+	.item-list {
+		li {
+			gap: 12px;
+			display: flex;
+			color: #E4E4E4;
+			margin-bottom: 12px;
+			align-items: center;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			i {
+				width: 20px;
+				height: 20px;
+				display: flex;
+				border-radius: 4px;
+				align-items: center;
+				justify-content: center;
+				background-color: var(--nx-prime-c);
+			}
+		}
+	}
+	&:is(.popular) {
+		border: 1px solid var(--nx-prime-c);
+		.item-top {
+			background-color: var(--nx-prime-c);
+		}
+	}
+}

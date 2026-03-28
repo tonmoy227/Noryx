@@ -920,7 +920,21 @@ Last change:    00/00/00
 	}
 
 
-
+	gsap.utils.toArray('.nx-work-p2-item').forEach((item) => {
+		gsap.from(item, {
+			opacity: 0,
+			y: 50,
+			scale: .9,
+			duration: 0.8,
+			filter: "blur(10px)",
+			scrollTrigger: {
+				trigger: item,
+				start: "top 80%",
+				toggleClass: { targets: item, className: "in-view" },
+				toggleActions: "play none none reset" 
+			}
+		});
+	});
 
 
 
