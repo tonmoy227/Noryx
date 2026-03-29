@@ -55,6 +55,9 @@
 				font-weight: 500;
 				padding-left: 20px;
 				position: relative;
+				@media #{$lg,$md,$sm,$xs,$xxs} {
+					display: none;
+				}
 				&:before {
 					left: 0;
 					top: 6px;

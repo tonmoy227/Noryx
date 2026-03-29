@@ -1,4 +1,5 @@
 .nx-ser2-top {
+	gap: 30px;
 	.nx-sec-title1 {
 		max-width: 580px;
 	}
@@ -13,6 +14,10 @@
 
 .nx-ser2-content {
 	gap: 24px;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
 
 .nx-ser2-item {
@@ -61,6 +66,10 @@
 		justify-content: space-between;
 		transform: perspective(1000px) rotateX(-90deg);
 		transition: all 500ms ease-in-out;
+		@media #{$sm,$xs,$xxs} {
+			flex-wrap: wrap;
+			position: relative;
+		}
 		.item-icon {
 			padding-top: 20px;
 			padding-left: 20px;
@@ -102,6 +111,7 @@
 			}
 		}
 		.item-img {
+			max-width: 316px;
 			overflow: hidden;
 			border-radius: 32px;
 		}
@@ -116,6 +126,23 @@
 			visibility: visible;
 			transition-delay: 200ms;
 			transform: rotateX(0) rotateY(0deg);
+		}
+	}
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		width: 100%;
+		height: 100%;
+		max-width: 668px;
+		.front-part {
+			display: none !important;
+		}
+		.back-part {
+			opacity: 1;
+			position: relative;
+			visibility: visible;
+			transform: rotateX(0) rotateY(0deg);
+			@media #{$md,$sm,$xs,$xxs} {
+				justify-content: center;
+			}
 		}
 	}
 }

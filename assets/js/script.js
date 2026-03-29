@@ -205,6 +205,15 @@ Last change:    00/00/00
 						});
 					});
 				}
+
+				const NXhero2 = gsap.timeline();
+				NXhero2
+				.from(".nx-hero2-img-grp .item-img", { xPercent: -50,  duration: 3.5, transformOrigin: "center",  ease: "elastic.out(1,0.7)" })
+				.from(".nx-hero2-img-grp .item-img2", { xPercent: 50,  duration: 3.5, transformOrigin: "center",  ease: "elastic.out(1,0.7)" },"<")
+				.from(".nx-hero2-video", { scale: 0.5, opacity: 0, duration: 1, transformOrigin: "center",  ease: "power1.out" },"< = .3")
+				.from(".nx-start-project .nx-start-up", { x: 50, opacity: 0, duration: 3.5, transformOrigin: "center",  ease: "elastic.out(1,0.7)" },"< = .3")
+				.from(".nx-start-project .nx-start-down", { x: -50, opacity: 0, duration: 3.5, transformOrigin: "center",  ease: "elastic.out(1,0.7)" },"< =")
+				
 				afterPageLoad();
 			}, 700);
 		})		
@@ -780,10 +789,10 @@ Last change:    00/00/00
 	});
 
 
-	const items = document.querySelectorAll(".nx-ab1-count-item");
+	const items = document.querySelectorAll(".nx-ab1-count-item, .nx-who-w-count-item");
 
 	items.forEach(item => {
-		const heading = item.querySelector(".item-bottom h3");
+		const heading = item.querySelector(".item-bottom h3,  .item-text h3");
 		if (!heading) return;
 
 		const split = new SplitText(heading, { type: "chars" });
@@ -805,6 +814,10 @@ Last change:    00/00/00
 				);
 		});
 	});
+
+
+
+
 
 	if (window.matchMedia("(min-width: 1200px)").matches) { 
 		var nxWC1 = gsap.timeline({
@@ -894,7 +907,7 @@ Last change:    00/00/00
 
 
 
-	if (window.matchMedia("(min-width: 1600px)").matches) {
+	if (window.matchMedia("(min-width: 1200px)").matches) {
 		var nxPro = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".nx-pro2-content",
@@ -908,10 +921,10 @@ Last change:    00/00/00
 		});
 
 		nxPro
-		.from( ".nx-pro2-item:nth-child(1)" , {x: 0,y: -800,rotate: -8, scale: 0.65, duration: 3, ease: "power1.out" })
-		.from( ".nx-pro2-item:nth-child(2)" , {x: -692,y: -790,rotate: 8, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
-		.from( ".nx-pro2-item:nth-child(3)" , {x: 0,y: -1318,rotate: -4, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
-		.from( ".nx-pro2-item:nth-child(4)" , {x: -692,y: -1318,rotate: 4, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
+		.from( ".nx-pro2-item:nth-child(1)" , {x: -90,y: -800,rotate: -8, scale: 0.65, duration: 3, ease: "power1.out" })
+		.from( ".nx-pro2-item:nth-child(2)" , {x: -762,y: -790,rotate: 8, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
+		.from( ".nx-pro2-item:nth-child(3)" , {x: -90,y: -1318,rotate: -4, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
+		.from( ".nx-pro2-item:nth-child(4)" , {x: -762,y: -1318,rotate: 4, scale: 0.65, duration: 3, ease: "power1.out" },"<=")
 		.from( ".nx-pro2-item:nth-child(1) .item-text" , {opacity: 0, ease: "power1.out" })
 		.from( ".nx-pro2-item:nth-child(2) .item-text" , {opacity: 0, ease: "power1.out" })
 		.from( ".nx-pro2-item:nth-child(3) .item-text" , {opacity: 0, ease: "power1.out" })
@@ -919,20 +932,179 @@ Last change:    00/00/00
 
 	}
 
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		gsap.utils.toArray('.nx-work-p2-item').forEach((item) => {
+			gsap.from(item, {
+				opacity: 0,
+				y: 50,
+				scale: .9,
+				duration: 0.8,
+				filter: "blur(10px)",
+				scrollTrigger: {
+					trigger: item,
+					start: "top 80%",
+					toggleClass: { targets: item, className: "in-view" },
+					toggleActions: "play none none reset" 
+				}
+			});
+		});
 
-	gsap.utils.toArray('.nx-work-p2-item').forEach((item) => {
-		gsap.from(item, {
-			opacity: 0,
-			y: 50,
-			scale: .9,
-			duration: 0.8,
-			filter: "blur(10px)",
+	}
+
+	// if (window.matchMedia("(min-width: 1200px)").matches) {
+
+	// 	gsap.registerPlugin(ScrollTrigger);
+
+	// 	const ServiceCardItems = gsap.utils.toArray(".nx-insight-img");
+
+	// 	ServiceCardItems.forEach((wrapper, index) => {
+
+	// 		const card = wrapper; 
+
+	// 		gsap.to(card, {
+
+	// 			transformPerspective: 1200, 
+	// 			x: 0,
+	// 			y: 0,
+	// 			scale: 1,
+	// 			rotation: 0,
+	// 			rotateX: -45,
+	// 			rotationY: 0,
+	// 			skewX: 0,
+	// 			skewY: 0,
+	// 			z: 0,
+
+
+	// 			transformOrigin: "50% 0% 0px",
+    //         ease: "none", 
+    //         force3D: true, 
+
+    //         scrollTrigger: {
+    //         	trigger: wrapper,
+
+    //         	start: `top ${30 + 30 * index}px`, 
+    //         	end: "top -100%",
+    //         	endTrigger: ".nx-insight-content",
+    //             pin: true,        
+    //             pinSpacing: false,   
+    //             scrub: 2,         
+    //             anticipatePin: 2,    
+    //             markers: false,
+    //             invalidateOnRefresh: true, 
+    //         },
+    //     });
+	// 	});
+	// }
+
+		if (window.matchMedia("(min-width: 992px)").matches) {
+		const ServiceCardItem = gsap.utils.toArray(".nx-insight-img");
+		const animateCard = (card, wrapper, index) => {
+			gsap.to(card, {
+				transformOrigin: "top center",
+				duration: 2,
+				scrub: 1.5,
+				ease: "power1.out",
+				scrollTrigger: {
+					trigger: wrapper,
+					start: `top ${120 + 40 * index}`, 
+					end: "bottom 75%",
+					endTrigger: ".nx-insight-right",
+					pin: wrapper,
+					pinSpacing: false,
+					markers: false,
+				},
+			});
+		};
+		ServiceCardItem.forEach((wrapper, index) => animateCard([index], wrapper, index));
+	}
+
+	gsap.utils.toArray(' .glow_view').forEach((el, index) => { 
+		let tlcta = gsap.timeline({
 			scrollTrigger: {
-				trigger: item,
-				start: "top 80%",
-				toggleClass: { targets: item, className: "in-view" },
-				toggleActions: "play none none reset" 
+				trigger: el,
+				scrub: 1.5,
+				start: "top 110%",
+				end: "top 95%",
+				toggleActions: "play none none reverse",
+				markers: false
 			}
+		})
+
+		tlcta
+		.set(el, {transformOrigin: 'center center'})
+		.from(el, { opacity: 0, scale: 1, y: "200"}, {opacity: 1, y: 0, duration: 1, immediateRender: false})
+	});
+
+
+	gsap.utils.toArray(' .scale_view').forEach((el, index) => { 
+		let tlcta = gsap.timeline({
+			scrollTrigger: {
+				trigger: el,
+				scrub: 1.5,
+				start: "top 85%",
+				end: "top 75%",
+				toggleActions: "play none none reverse",
+				markers: false
+			}
+		})
+
+		tlcta
+		.set(el, {transformOrigin: 'center center'})
+		.from(el, { opacity: 0, scale: .5})
+	});
+
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		var nxWC2 = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.nx-why-c2-content',
+				start: "top 50%",
+				toggleActions: 'play none none reverse',
+				markers: false,
+			}
+
+		});
+		nxWC2
+		.from(".nx-why-c2-item1 .nx-wc2-shape1", { opacity: 0, yPercent: 50, xPercent: 50, duration: 1.5,   ease: "power1.out" })
+		.from(".nx-why-c2-item2 .nx-wc2-icon", { opacity: 0, yPercent: 50,  duration: 3,   ease: "elastic.out(1,0.7)" },"<")
+		.from(".nx-why-c2-item4 .item-img", { opacity: 0, xPercent: 50,  duration: 1,   ease: "power1.out" },"< = .3")
+		.from(".nx-why-c2-item3 .nx-wc2-img", { opacity: 0, yPercent: 50,  duration: .5,   ease: "power1.out" },"< = .3")
+		.from(".nx-why-c2-item5 .item-client li", { opacity: 0, scale: 0,  duration: 1, rotate: 350,   ease: "power1.out" },"< = .3")
+
+		
+	};
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		document.querySelectorAll('.nx-tst-team-sec').forEach((section) => {
+			let SecTitle = gsap.timeline({
+				scrollTrigger: {
+					trigger: section,
+					start: "top -5%",
+					end: "top -100%",
+					scrub: 1,
+					pin: false,
+					pinSpacing: false,
+					markers: false,
+				}
+			});
+
+			SecTitle.from(section.querySelector('.nx-tm2-item._1'), { y: -1220, x: -50,  scale: .3, duration: 1, ease: "power2.out"});
+			SecTitle.from(section.querySelector('.nx-tm2-item._4'), { y: -1220, x: 50,  scale: .3, duration: 1, ease: "power2.out"},"< = ");
+			SecTitle.from(section.querySelector('.nx-tm2-item._2'), { y: -720, x: -400,  scale: .3, duration: 1, ease: "power2.out"},"< = ");
+			SecTitle.from(section.querySelector('.nx-tm2-item._3'), { y: -720, x: 400,  scale: .3, duration: 1, ease: "power2.out"},"< = ");
+
+		});
+	}
+
+	document.querySelectorAll(".nx-tm2-content").forEach((item) => {
+		ScrollTrigger.create({
+			trigger: item,
+			start: "top 45%",  
+			toggleClass: { targets: item, className: "active" },
+			once: false,
+			markers: false,
 		});
 	});
 

@@ -1,5 +1,8 @@
 .nx-spon2-content {
 	gap: 16px;
+	@media #{$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+	}
 	.nx-spon2-text {
 		max-width: 185px;
 		h3 {

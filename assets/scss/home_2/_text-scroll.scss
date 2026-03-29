@@ -11,6 +11,9 @@
 	display: flow-root;
 	transform: rotate(-5deg);
 	background-color: var(--nx-prime-c);
+	@media #{$xs,$xxs} {
+		transform: rotate(0deg);
+	}
 	h3 {
 		color: #fff;
 		font-size: 26px;
@@ -26,6 +29,10 @@
 		margin-top: -50px;
 		transform: rotate(5deg);
 		background-color: #2B2B2B;
+		@media #{$xs,$xxs} {
+			margin-top: 0;
+			transform: rotate(0deg);
+		}
 	}
 }
 
@@ -37,6 +44,12 @@
 	position: absolute;
 	border-radius: 100%;
 	transform: translateY(-50%) translateX(-50%);
+	@media #{$xs,$xxs} {
+		display: none;
+	}
+	span {
+		animation: spin 8s linear infinite;
+	}
 	i {
 		top: 50%;
 		left: 50%;

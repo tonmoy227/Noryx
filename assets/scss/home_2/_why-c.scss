@@ -5,10 +5,31 @@
 	}
 }
 
+@keyframes floatY {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	50% {
+		-webkit-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
 .nx-why-c2-content {
 	gap: 12px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	@media #{$md} {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media #{$sm,$xs,$xxs} {
+		grid-template-columns:  1fr;
+	}
 }
 
 .nx-why-c2-item1 {
@@ -49,36 +70,51 @@
 		width: 520px;
 		height: 188px;
 		margin-left: -40px;
+		@media #{$xs,$xxs} {
+			width: 100%;
+			margin-left: 0;
+			text-align: center;
+		}
 		li {
 			left: 0;
 			bottom: 0;
 			position: absolute;
+			animation: floatY 2s ease-in-out infinite;
+			@media #{$xs,$xxs} {
+				position: static;
+			}
 			&:nth-child(2) {
 				left: 60px;
 				bottom: 60px;
+				animation-delay: .3s;
 			}
 			&:nth-child(3) {
 				left: 140px;
 				bottom: 105px;
+				animation-delay: .6s;
 			}
 			&:nth-child(4) {
 				left: 230px;
 				bottom: 130px;
+				animation-delay: .9s;
 			}
 			&:nth-child(5) {
 				right: 0;
 				bottom: 0;
 				left: auto;
+				animation-delay: 1.2s;
 			}
 			&:nth-child(6) {
 				right: 60px;
 				bottom: 60px;
 				left: auto;
+				animation-delay: 1.5s;
 			}
 			&:nth-child(7) {
 				right: 140px;
 				bottom: 105px;
 				left: auto;
+				animation-delay: 1.8s;
 			}
 
 		}
@@ -243,6 +279,8 @@
 		}
 	}
 	.item-bottom {
+		gap: 15px;
+		flex-wrap: wrap;
 		h3 {
 			color: #fff;
 			font-size: 40px;

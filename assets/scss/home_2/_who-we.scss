@@ -1,13 +1,21 @@
 .nx-who-we-sec {
 	background-color: #111111;
 }
-
+.nx-who-we-top {
+	gap: 30px;
+	@media #{$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+	}
+}
 .nx-who-we-counter {
 	width: 100%;
 	display: grid;
 	gap: 24px 50px;
 	max-width: 900px;
 	grid-template-columns: 1fr 1fr;
+	@media #{$md,$sm,$xs,$xxs} {
+		grid-template-columns: 1fr;
+	}
 }
 
 .nx-who-w-count-item {
@@ -25,6 +33,10 @@
 	}
 	.item-text {
 		max-width: 404px;
+		@media #{$xxs} {
+			gap: 15px;
+			flex-wrap: wrap;
+		}
 		h3 {
 			color: #fff;
 			max-width: 145px;
@@ -55,6 +67,8 @@
 
 .nx-who-we-exp {
 	width: 100%;
+	@media #{$xxs} {
+	}
 	.item-title {
 		margin-bottom: 18px;
 		padding-bottom: 14px;
@@ -67,6 +81,10 @@
 		}
 	}
 	.item-year {
+		@media #{$xxs} {
+			gap: 15px;
+			flex-wrap: wrap;
+		}
 		p {
 			font-weight: 500;
 			max-width: 250px;

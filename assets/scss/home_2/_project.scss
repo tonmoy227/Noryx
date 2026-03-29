@@ -20,13 +20,64 @@
 	gap: 32px 24px;
 	position: relative;
 	grid-template-columns: 1fr 1fr;
+	@media #{$md,$sm,$xs,$xxs} {
+		grid-template-columns: 1fr;
+	}
 }
-
+@keyframes EYE {
+	90% {
+		transform: none;
+		animation-timing-function: ease-in;
+	}
+	93% {
+		transform: translateY(15px) scaleY(0);
+	}
+	100% {
+		animation-timing-function: ease-out;
+	}
+}
 .nx-pro2-item {
+	margin: 0 auto;
+	max-width: 668px;
 	.item-img {
 		overflow: hidden;
 		border-radius: 32px;
 		margin-bottom: 22px;
+		img {
+			transition: all 500ms ease-in-out;
+		}
+		.item-icon {
+			left: 0;
+			top: 50%;
+			right: 0;
+			width: 72px;
+			opacity: 0;
+			height: 72px;
+			margin: 0 auto;
+			visibility: hidden;
+			position: absolute;
+			transform: translateY(-30%);
+			transition: all 300ms ease-in-out;
+			a {
+				color: #fff;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				border-radius: 100%;
+				align-items: center;
+				justify-content: center;
+				background-color: var(--nx-prime-c);
+				i {
+					font-size: 28px;
+					animation: EYE 1.5s infinite;
+					transform-origin: 50% 50%;
+				}
+			}
+		}
+	}
+	.item-text {
+		gap: 10px 30px;
+		flex-wrap: wrap;
 	}
 	.title-pro {
 		h3 {
@@ -49,5 +100,33 @@
 		font-size: 16px;
 		font-weight: 500;
 		align-items: center;
+		svg {
+			transition: all 300ms ease-in-out;
+			path {
+				transition: all 500ms ease-in-out;
+			}
+		}
+		&:hover {
+			color: var(--nx-prime-c);
+			svg {
+				margin-right: 5px;
+				transform: rotate(45deg);
+				path {
+					fill: var(--nx-prime-c);
+				}
+			}
+		}
+	}
+	&:hover {
+		.item-img {
+			img {
+				transform: scale(1.05);
+			}
+		}
+		.item-icon {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(-50%);
+		}
 	}
 }

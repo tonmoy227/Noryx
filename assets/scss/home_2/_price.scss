@@ -2,6 +2,12 @@
 	gap: 24px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	@media #{$md} {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media #{$sm,$xs,$xxs} {
+		grid-template-columns:  1fr;
+	}
 }
 
 .nx-price2-btn {
@@ -78,6 +84,9 @@
 			text-align: center;
 			border-radius: 15px;
 			background-color: #000000;
+			&:hover {
+				background-color: var(--nx-prime-c);
+			}
 		}
 	}
 	.item-desc {
@@ -133,6 +142,14 @@
 		border: 1px solid var(--nx-prime-c);
 		.item-top {
 			background-color: var(--nx-prime-c);
+		}
+		.item-btn {
+			a {
+				&:hover {
+					color: #000;
+					background-color: #fff;
+				}
+			}
 		}
 	}
 }
