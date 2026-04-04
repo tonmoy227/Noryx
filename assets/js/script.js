@@ -130,9 +130,31 @@ Last change:    00/00/00
 	});
 
 
+
+	$('.marquee-left2').marquee({
+		gap: 25,
+		speed: 40,
+		delayBeforeStart: 0,
+		direction: 'right',
+		duplicated: true,
+		pauseOnHover: false,
+		startVisible:true,
+	});
+
+
 	$('.marquee-right2').marquee({
 		gap: 0,
 		speed: 40,
+		delayBeforeStart: 0,
+		direction: 'left',
+		duplicated: true,
+		pauseOnHover: false,
+		startVisible:true,
+	});
+
+	$('.marquee-right3').marquee({
+		gap: 0,
+		speed: 20,
 		delayBeforeStart: 0,
 		direction: 'left',
 		duplicated: true,
@@ -996,7 +1018,7 @@ Last change:    00/00/00
 	// 	});
 	// }
 
-		if (window.matchMedia("(min-width: 992px)").matches) {
+	if (window.matchMedia("(min-width: 992px)").matches) {
 		const ServiceCardItem = gsap.utils.toArray(".nx-insight-img");
 		const animateCard = (card, wrapper, index) => {
 			gsap.to(card, {
@@ -1107,6 +1129,59 @@ Last change:    00/00/00
 			markers: false,
 		});
 	});
+
+
+
+	if($(".nx-testi3-slider-wrap").length) {
+		var swiper3 = new Swiper(".nx-tst-thumb-slider", {
+			speed: 500,
+			loop: true,
+			slideToClickedSlide: false,
+			centeredSlides: true,
+			allowTouchMove: false,
+			navigation: {
+				nextEl: ".nx-tst3-next",
+				prevEl: ".nx-tst3-prev",
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 5,
+				},
+				576: {
+					slidesPerView: 5,
+				},
+				767: {
+					slidesPerView: 5,
+				},
+				768: {
+					slidesPerView: 5,
+				},
+				992: {
+					slidesPerView: 5,
+				},
+			},
+
+		});
+		var swiper2 = new Swiper(".nx-testi3-slider", {
+			speed: 500,
+			loop: true,
+			effect: "fade",
+			navigation: {
+				nextEl: ".nx-tst3-next",
+				prevEl: ".nx-tst3-prev",
+			},
+			fadeEffect: {
+				crossFade: true
+			},
+			autoplay: {
+				delay: 6000,
+			},
+			thumbs: {
+				swiper: swiper3,
+			},
+
+		});
+	}
 
 
 

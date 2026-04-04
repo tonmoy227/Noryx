@@ -88,5 +88,74 @@
 				}
 			}
 		}
+		&:is(.ver_2) {
+			.nx-header-content {
+				max-width: 1750px;
+				.brand-logo {
+					padding-top: 0;
+				}
+				.hd-hire { 
+					z-index: 1;
+					height: 46px;
+					width: 405px;
+					margin-top: -8px;
+					&:before {
+						display: none;
+					}
+					span {
+						padding-left: 20px;
+						position: relative;
+						&:before {
+							left: 0;
+							top: 6px;
+							width: 10px;
+							content: '';
+							height: 10px;
+							border-radius: 100%;
+							position: absolute;
+							background-color: var(--nx-prime-c2);
+						}
+					}
+					.hd-shape {
+						top: -8px;
+						left: 15px;
+						z-index: -1
+					}
+				}
+				.nx-hd-action {
+					gap: 12px;
+					border-radius: 12px;
+					margin-top: 20px;
+					background-color: #000;
+					padding: 4px 4px 4px 12px;
+					@media #{$xxs} {
+						padding: 10px;
+					}
+					.nx-ofcanvas-btn {
+						padding-top: 0;
+						cursor: pointer;
+						svg {
+							line {
+
+							}
+						}
+					}
+					.cta-btn {
+						@media #{$xxs} {
+							display: none;
+						}
+						a {
+							color: #fff;
+							line-height: 1;
+							font-weight: 500;
+							border-radius: 8px;
+							padding: 12px 14px;
+							font-family: var(--nx-heading);
+							background-color: var(--nx-prime-c2);
+						}
+					}
+				}
+			}
+		}
 	}
 }
