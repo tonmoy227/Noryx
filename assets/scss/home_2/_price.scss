@@ -35,6 +35,21 @@
 		letter-spacing: -0.5px;
 		font-family: var(--nx-heading);
 	}
+	&:is(.ver_2) {
+		.nav-tabs {
+			background-color: #fff;
+		}
+		.nav-link,
+		.nav-link.active  {
+			color: #000000;
+		}
+		.nav-link.active {
+			background-color: #EFEFEF;
+		}
+		span {
+			color: #000;
+		}
+	}
 }
 
 
