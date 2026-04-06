@@ -1353,6 +1353,46 @@ Last change:    00/00/00
 	};
 
 
+	if($('.nx-split-2').length) {
+		var txtSplit = $('.nx-split-2');
+		if(txtSplit.length == 0) return; gsap.registerPlugin(SplitText); txtSplit.each(function(index, el) {
+			el.split = new SplitText(el, { 
+				type: "lines",
+				wordsClass: "split-line"
+			});
+		});
+	}
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		var nxWC2 = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.nx-team3-sec',
+				start: "top 0%",
+				end: "bottom -=200",
+				markers: false,
+				scrub: 2,
+				pin: true,
+				pinSpacing: true,
+			}
+
+		});
+		nxWC2
+		.from(".nx-team3-title .nx-tm3-subtitle", { y: 85, duration: .5,   ease: "power1.out" })
+		.from(".nx-team3-title h2 span:nth-child(1)", { y: 85, duration: .5,   ease: "power1.out" },"<")
+		.from(".nx-team3-title h2 span:nth-child(2)", {   x: -85, duration: .5,   ease: "power1.out" },"<")
+		.from(".nx-team3-title h2 span:nth-child(3)", {   y: -85, duration: .5,   ease: "power1.out" },"<")
+		.from(".nx-team3-item-feed", { height: 0, duration: 1,   ease: "power1.out" },"< = .1")
+		.from(".nx-team3-item._3", { scale: 1.4,   ease: "power1.out" })
+		.from(".nx-team3-item._2", { xPercent: 100,   ease: "power1.out" },"< = .1")
+		.from(".nx-team3-item._4", { xPercent: -100,   ease: "power1.out" },"< =")
+		.from(".nx-team3-item._1", { xPercent: 210,   ease: "power1.out" },"< = .1")
+		.from(".nx-team3-item._5", { xPercent: -210,   ease: "power1.out" },"< = ")
+		.from(".nx-team3-video", { scale: 0, transformOrigin: "center center", duration: 1.5,   ease: "power1.out" },"< = 1.5")
+
+		
+	};
+
 
 
 })(jQuery);

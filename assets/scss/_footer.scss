@@ -266,6 +266,19 @@
 .nx-footer2-part1 {
 	width: 100%;
 	max-width: 553px;
+	&:is(.ver_2) {
+		max-width: 575px;
+		.nx-ftr2-info {
+			&:before {
+				background-color: var(--nx-prime-c2);
+			}
+		}
+		h3 {
+			span {
+				color: var(--nx-prime-c2);
+			}
+		}
+	}
 	.nx-ftr2-info {
 		color: #fff;
 		opacity: .8;
@@ -281,7 +294,7 @@
 		}
 		&:before {
 			left: 0;
-			top: -1px;
+			top: -2px;
 			width: 24px;
 			height: 3px;
 			content: '';
@@ -311,6 +324,7 @@
 		}
 		p {
 			opacity: .8;
+			color: #FFFFFF;
 			max-width: 395px;
 		}
 	}
@@ -325,6 +339,11 @@
 		border-top: 1px solid #2A2A2A;
 		span {
 			color: var(--nx-prime-c);
+		}
+		&:is(.ver_2) {
+			span {
+				color: var(--nx-prime-c2);
+			}
 		}
 	}
 }

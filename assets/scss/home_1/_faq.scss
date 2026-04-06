@@ -105,9 +105,35 @@
 				color: #fff;
 			}
 		}
+		.accordion-button::after {
+			top: 15px;
+			right: 20px;
+			color: #fff;
+			width: 40px;
+			content: '\2b';
+			height: 40px;
+			display: flex;
+			transform: none;
+			font-weight: 700;
+			align-items: center;
+			position: absolute;
+			border-radius: 100%;
+			justify-content: center;
+			background-color: #35353599;
+			background-image: none;
+			font-family: 'Font Awesome 5 Free';
+		}
+		.accordion-button:not(.collapsed) {
+			&:after {
+				transform: none;
+				background-color: var(--nx-prime-c2);
+				content: '\f068';
+			}
+		}
 		.accordion-body {
 			.bi-faq-text {
 				color: #E4E4E4;
+				max-width: 900px;
 			}
 			border-top: 1px solid #2F2F2F;
 		}

@@ -4,6 +4,13 @@
 	}
 }
 
+.nx-cont-faq-content {
+	gap: 30px;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+		justify-content: center !important;
+	}
+}
 .nx-cont3-content {
 	width: 100%;
 	max-width: 703px;
@@ -40,6 +47,9 @@
 .nx-faq3-content {
 	width: 100%;
 	max-width: 850px;
+	@media #{$xl} {
+		max-width: 750;
+	}
 	.nx-sec-title1 {
 		max-width: 650px;
 		.subtitle {
@@ -47,7 +57,7 @@
 		}
 		.sec_title {
 			color: #fff;
-			max-width: 350px;
+			max-width: 450px;
 		}
 		p {
 			color: #fff;
@@ -60,6 +70,9 @@
 		display: grid;
 		border: none;
 		grid-template-columns: 1fr 1fr 1fr;
+		@media #{$xxs} {
+			grid-template-columns: 1fr;
+		}
 		.nav-link,
 		.nav-link.active  {
 			color: #fff;

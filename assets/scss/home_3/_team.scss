@@ -1,5 +1,9 @@
 .nx-team3-sec {
 	height: 100vh;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		height: 100%;
+		padding: 100px 0px;
+	}
 }
 
 .nx-team3-content {
@@ -7,9 +11,16 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		height: 100%;
+		flex-wrap: wrap;
+	}
 }
 
 .nx-team3-title {
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		padding-bottom: 50px;
+	}
 	.nx-tm3-subtitle {
 		margin-bottom: 20px;
 		span {
@@ -30,14 +41,38 @@
 	}
 	h2 {
 		color: #000000;
-		line-height: 1;
+		line-height: 1.6;
 		font-weight: 700;
 		font-size: 130px;
 		text-transform: uppercase;
+		@media #{$lg,$md,$sm,$xs,$xxs} {
+			line-height: 1;
+		}
+		@media #{$lg} {
+			font-size: 100px;
+		}
+		@media #{$md} {
+			font-size: 80px;
+		}
+		@media #{$sm} {
+			font-size: 70px;
+		}
+		@media #{$xs} {
+			font-size: 60px;
+		}
+		@media #{$xxs} {
+			font-size: 50px;
+		}
+		@media #{$xxxs} {
+			font-size: 40px;
+		}
 		span {
 			display: block;
 			&:nth-child(2) {
 				padding-left: 150px;
+				@media #{$md,$sm,$xs,$xxs} {
+					padding-left: 0;
+				}
 			}
 			&:nth-child(3) {
 				width: 100%;
@@ -63,6 +98,9 @@
 					position: absolute;
 					background-color: #DFDFDF;
 					transform: translateY(-50%);
+					@media #{$lg,$md,$sm,$xs,$xxs} {
+						display: none;
+					}
 				}
 			}
 		}
@@ -70,24 +108,52 @@
 }
 
 .nx-team3-item-feed {
+	left: 0;
+	top: 50%;
 	width: 100%;
 	height: 100vh;
 	display: flex;
+	overflow: hidden;
+	position: absolute;
 	align-items: center;
 	justify-content: center;
 	background-color: #111111;
+	transform: translateY(-50%);
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		height: 100%;
+		position: static;
+		padding: 80px 15px;
+		transform: translateY(0%);
+	}
 }
 
 .nx-team3-item-wrap {
 	gap: 24px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	@media #{$md,$sm,$xs,$xxs} {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	@media #{$sm,$xs,$xxs} {
+		grid-template-columns:  1fr 1fr;
+	}
+	@media #{$xs,$xxs} {
+		grid-template-columns:   1fr;
+	}
 }
 
 .nx-team3-item {
 	overflow: hidden;
 	max-height: 560px;
 	border-radius: 24px;
+	&:is(._3) {
+		z-index: 2;
+		position: relative;
+	}
+	&:is(._4) {
+		z-index: 1;
+		position: relative;
+	}
 	.item-img {
 		position: relative;
 		&:before {
@@ -137,5 +203,14 @@
 			bottom: 90px;
 			visibility: visible;
 		}
+	}
+}
+
+.nx-team3-video {
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		position: static;
 	}
 }
