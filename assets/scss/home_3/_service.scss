@@ -6,12 +6,19 @@
 }
 
 .nx-ser3-content {
+	gap: 30px;
 	display: flex;
 	justify-content: space-between;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
 
 
 .nx-ser3-top {
+	gap: 30px;
+	flex-wrap: wrap;
 	.nx-sec-title1 {
 		max-width: 480px;
 		.subtitle {
@@ -42,6 +49,34 @@
 	&:last-child {
 		margin-bottom: 0;
 	}
+	.item-icon {
+		left: 0;
+		top: 42%;
+		right: 0;
+		width: 72px;
+		opacity: 0;
+		height: 72px;
+		margin: 0 auto;
+		visibility: hidden;
+		position: absolute;
+		transform: translateY(-30%);
+		transition: all 300ms ease-in-out;
+		a {
+			color: #fff;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			border-radius: 100%;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--nx-prime-c2);
+			i {
+				font-size: 28px;
+				animation: EYE 1.5s infinite;
+				transform-origin: 50% 50%;
+			}
+		}
+	}
 	.item-tag {
 		left: 0;
 		bottom: 0;
@@ -50,12 +85,22 @@
 		position: absolute;
 		background: #00000003;
 		backdrop-filter: blur(36px);
+		@media #{$xs,$xxs} {
+			padding: 25px 15px;
+		}
 		a {
 			color: #fff;
 			margin-right: 8px;
 			padding: 10px 16px;
 			border-radius: 120px;
 			background-color: #000000;
+		}
+	}
+	&:hover {
+		.item-icon {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(-50%);
 		}
 	}
 }
@@ -68,10 +113,13 @@
 .nx-ser3-text {
 	top: 0;
 	left: 0;
-	opacity: 0;
 	width: 100%;
 	position: absolute;
-	visibility: hidden;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		display: block;
+		position: static;
+		margin-bottom: 30px;
+	}
 	.item-serial {
 		color: #fff;
 		width: 60px;
@@ -107,9 +155,5 @@
 			color: #fff;
 		}
 	}
-	&:first-child {
-		opacity: 1;
-		position: relative;
-		visibility: visible;
-	}
+
 }

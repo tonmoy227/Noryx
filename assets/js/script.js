@@ -236,6 +236,19 @@ Last change:    00/00/00
 				.from(".nx-start-project .nx-start-up", { x: 50, opacity: 0, duration: 3.5, transformOrigin: "center",  ease: "elastic.out(1,0.7)" },"< = .3")
 				.from(".nx-start-project .nx-start-down", { x: -50, opacity: 0, duration: 3.5, transformOrigin: "center",  ease: "elastic.out(1,0.7)" },"< =")
 				
+				const NXhero3 = gsap.timeline();
+				NXhero3
+				.from(".nx-hero3-img", { yPercent: 100,  duration: 1, transformOrigin: "center",  ease: "power1.out" })
+				.from(".nx-hr3-marquee-text", { yPercent: 100,  duration: 1, transformOrigin: "center",  ease: "power1.out" },"< = .2")
+				.from(".nx-hr3-circle", { scale: 0,  duration: 1.5, transformOrigin: "center",  ease: "power1.out" },"< = .2")
+				.from(".nx-hr3-circle-social .nx-hr3-circle2", {  scale: 1.2, opacity: 0,  duration: 1.5, transformOrigin: "center",  ease: "power1.out" },"< = .3")
+				.from(".nx-hr3-circle-social .nx-hr3-social ul li", {  scale: 0, opacity: 0,  duration: 1.5, transformOrigin: "center",  ease: "power1.out" },"< = .3")
+				.from(".nx-hr3-shape1", {  scale: 0, opacity: 0,  duration: 1, transformOrigin: "center",  ease: "power1.out" },"< = .3")
+				
+
+
+
+
 				afterPageLoad();
 			}, 700);
 		})		
@@ -900,6 +913,13 @@ Last change:    00/00/00
 
 				});
 			}
+			if( $(el).hasClass('ftr_bottom-text_4') ){
+				gsap.set(el.split.chars, {
+					x: -100,
+					opacity: 0,
+
+				});
+			}
 			el.anim = gsap.to(el.split.chars, {
 				scrollTrigger: {
 					trigger: el,
@@ -953,6 +973,26 @@ Last change:    00/00/00
 		.from( ".nx-pro2-item:nth-child(4) .item-text" , {opacity: 0, ease: "power1.out" })
 
 	}
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		var nxPro = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".nx-ab3-content",
+				start: "top 100%",
+				end: "top 10%",
+				toggleActions: "play none none reverse",
+				scrub: true,
+				markers: false,
+			}
+
+		});
+
+		nxPro
+		.from( ".nx-ab3-count-card:nth-child(2)" , {yPercent: -100,  duration: 1, ease: "power1.out" })
+		.from( ".nx-ab3-count-card:nth-child(3)" , {yPercent: -205,  duration: 1, ease: "power1.out" },"<=")
+	}
+
 
 	if (window.matchMedia("(min-width: 1200px)").matches) {
 		gsap.utils.toArray('.nx-work-p2-item').forEach((item) => {
@@ -1184,6 +1224,133 @@ Last change:    00/00/00
 	}
 
 
+
+	var AXFT = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".nx-hw-work3-content",
+			start: "top 70%",
+			toggleActions: "play reverse play reverse",
+			markers: false,
+		},
+	})
+	AXFT
+	.from(".nx-hw-work3-item", {
+		xPercent: -100,
+		opacity: 0,
+		ease: "back.out(1.5)",
+		duration: 1, 
+		stagger: -.2,
+	})
+
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		const ServiceCardItem2 = gsap.utils.toArray(".nx-ser3-img");
+		const animateCard2 = (card, wrapper, index) => {
+			gsap.to(card, {
+				transformOrigin: "top center",
+				duration: 2,
+				scrub: 1.5,
+				ease: "power1.out",
+				scrollTrigger: {
+					trigger: wrapper,
+					start: `top ${100 + 0 * index}`, 
+					end: "bottom 55%",
+					endTrigger: ".nx-ser3-content",
+					pin: wrapper,
+					pinSpacing: false,
+					markers: false,
+				},
+			});
+		};
+		ServiceCardItem2.forEach((wrapper, index) => animateCard2([index], wrapper, index));
+	} 
+
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		let texts = gsap.utils.toArray(".nx-ser3-text");
+		let total = texts.length;
+		texts.forEach((el, i) => {
+			el.style.display = i === 0 ? "block" : "none";
+		});
+		ScrollTrigger.create({
+			trigger: ".nx-ser3-text-part",
+			start: "top 10%",
+			end: "top -90%",
+			scrub: true,
+			pin: true,
+			onUpdate: (self) => {
+				let progress = self.progress; 
+				let index = Math.floor(progress * total);
+
+				if (index >= total) index = total - 1;
+
+				switchTo(index);
+			}
+		});
+		function switchTo(index) {
+			texts.forEach((el, i) => {
+				el.style.display = (i === index) ? "block" : "none";
+			});
+		}
+	}
+
+	function updateVisibility() {
+		const elements = $('.nx-pro3-item');
+		const viewportBottom = $(window).scrollTop() + $(window).height();
+		const viewportTop = $(window).scrollTop();
+
+		elements.each(function() {
+			const element = $(this);
+			const elementTop = element.offset().top;
+			const elementBottom = elementTop + element.outerHeight();
+
+			if (elementTop < viewportBottom && elementBottom > viewportTop) {
+				element.addClass('visible');
+			} else {
+				element.removeClass('visible');
+			}
+		});
+	}
+	$(window).on('scroll resize', updateVisibility);
+	updateVisibility();
+
+
+	if (window.matchMedia("(min-width: 991px)").matches) { 
+		gsap.utils.toArray(' .slide_view_1').forEach((el, index) => { 
+			let tlcta = gsap.timeline({
+				scrollTrigger: {
+					trigger: el,
+					scrub: 1.5,
+					end: "top 20%",
+					start: "top 70%",
+					toggleActions: "play none none reverse",
+					markers: false
+				}
+			})
+
+			tlcta
+			.set(el, {transformOrigin: 'top'})
+			.from(el, { opacity: 1, scale: 1,  y: "+=50"}, {opacity: 1, y: 0, duration: 1, immediateRender: false})
+		});
+	};
+
+	if (window.matchMedia("(min-width: 991px)").matches) { 
+		gsap.utils.toArray(' .slide_view_2').forEach((el, index) => { 
+			let tlcta = gsap.timeline({
+				scrollTrigger: {
+					trigger: el,
+					scrub: 1.5,
+					end: "top 20%",
+					start: "top 70%",
+					toggleActions: "play none none reverse",
+					markers: false
+				}
+			})
+
+			tlcta
+			.set(el, {transformOrigin: 'bottom bottom'})
+			.from(el, { opacity: 1, scale: 1, y: "-=50"}, {opacity: 1, y: 0, duration: 1, immediateRender: false})
+		});
+	};
 
 
 

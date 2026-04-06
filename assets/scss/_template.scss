@@ -27,3 +27,20 @@ $sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
 $xs:'only screen and (min-width: 481px) and (max-width: 575px)';
 $xxs:'(max-width: 480px)';
 $xxxs:'(max-width: 360px)';
+
+@keyframes borderpls {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 #B019D6;
+		box-shadow: 0 0 0 0 #B019D6;
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 10px #B019D6;
+		box-shadow: 0 0 0 10px #B019D6;
+		opacity: 0;
+	}
+	to {
+		-webkit-box-shadow: 0 0 0 0 #B019D6;
+		box-shadow: 0 0 0 0 #B019D6;
+		opacity: 0;
+	}
+}

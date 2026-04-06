@@ -102,10 +102,11 @@
 					&:before {
 						display: none;
 					}
-					span {
+					a {
 						padding-left: 20px;
 						position: relative;
-						&:before {
+						&:before,
+						&:after {
 							left: 0;
 							top: 6px;
 							width: 10px;
@@ -114,6 +115,9 @@
 							border-radius: 100%;
 							position: absolute;
 							background-color: var(--nx-prime-c2);
+						}
+						&:after {
+							animation: borderpls 1.5s infinite cubic-bezier(0.4, 0, 1, 1) both;
 						}
 					}
 					.hd-shape {
