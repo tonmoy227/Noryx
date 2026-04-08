@@ -245,8 +245,13 @@
 
 .nx-why-c2-item5 {
 	padding: 24px;
+	overflow: hidden;
 	border-radius: 20px;
 	background-color: var(--nx-prime-c);
+	.nx-wc-shape4 {
+		top: -10px;
+		right: -13px;
+	}
 	.item-client {
 		ul {
 			display: flex;

@@ -3,7 +3,10 @@
 		max-width: 1744px;
 	}
 }
-
+.nx-cont3-wrap {
+	max-width: 705px;
+	width: 100%;
+}
 .nx-cont-faq-content {
 	gap: 30px;
 	@media #{$lg,$md,$sm,$xs,$xxs} {
@@ -12,8 +15,10 @@
 	}
 }
 .nx-cont3-content {
+	top: 40px;
 	width: 100%;
-	max-width: 703px;
+	position: sticky;
+	max-width: 705px;
 	border-radius: 32px;
 	background-color: #000000;
 	.nx-get-in-form .nx-get-in-shape {

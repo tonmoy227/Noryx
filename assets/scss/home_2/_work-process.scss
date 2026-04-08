@@ -91,6 +91,11 @@
 				right: -15px;
 				bottom: -15px;
 			}
+			svg {
+				path {
+					transition: all 500ms ease-in-out;
+				}
+			}
 		}
 		.inner-stage {
 			color: #fff;
@@ -129,6 +134,15 @@
 	}
 	&:hover {
 		background-color: var(--nx-prime-c);
+		.item-top {
+			.inner-icon {
+				svg {
+					path {
+						fill: var(--nx-prime-c);
+					}
+				}
+			}
+		}
 	}
 }
 .nx-work-p2-part2 {

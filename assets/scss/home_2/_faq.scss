@@ -82,12 +82,13 @@
 	.accordion-button {
 		border: none;
 		span {
-			color: #fff;
+			color: #E4E4E4;
 		}
 	}
 	.accordion-body {
 		border-top: 1px solid #222222CC;
 		.bi-faq-text {
+			opacity: .8;
 			color: #E4E4E4;
 		}
 	}

@@ -30,6 +30,10 @@
   	</div>
   </div>
 
+  <div class="nx-up">
+    <a href="#" class="nx-scrollup ver_2 text-center"><i class="fa-solid fa-chevron-up"></i></a>
+</div>
+
   <!-- Start of Header section
     ============================================= -->
     <header id="nx-header" class="nx-header-section header_style_two ver_2 txa_sticky_header">
@@ -42,7 +46,7 @@
     			<a href="#">Available For New Projects</a>
     		</div>
     		<div class="nx-hd-action d-flex align-items-center">
-    			<div class="nx-ofcanvas-btn">
+    			<div class="nx-ofcanvas-btn open_mobile_menu">
     				<svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
     					<line x1="12" y1="1" x2="28" y2="1" stroke="#fff" stroke-width="2"/>
     					<line y1="17" x2="16" y2="17" stroke="#fff" stroke-width="2"/>
@@ -55,6 +59,94 @@
     		</div>
     	</div>
     </header>
+
+    <!-- Mobile-start -->
+    <div class="mobile_menu lenis lenis-smooth ofcanvas_sidebar position-relative">
+        <div class="mobile_menu_wrap">
+            <div class="mobile_menu_overlay open_mobile_menu"></div>
+            <div class="mobile_menu_content">
+                <div class="mobile_menu_close open_mobile_menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="m-brand-logo">
+                    <img src="assets/img/logo/logo1.svg" alt="">
+                </div>
+                <div class="mobile-search-bar position-relative">
+                    <form action="#">
+                        <input type="text" name="search" placeholder="Keywords">
+                        <button><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <nav class="mobile-main-navigation  clearfix ul-li">
+                    <ul id="m-main-nav" class="nav navbar-nav clearfix">
+                        <li class="dropdown active">
+                            <a href="!#">Home</a>
+                            <ul class="dropdown-menu clearfix">
+                                <li><a class="active" href="index.html">Home Page 1</a></li>
+                                <li><a href="index-2.html">Home Page 2</a></li>
+                                <li><a href="index-3.html">Home Page 3</a></li>
+                                <li><a href="index-4.html">Home Page 4</a></li>
+                                <li><a href="index-5.html">Home Page 5</a></li>
+                                <li><a href="index-6.html">Home Page 6</a></li>
+                                <li><a href="index-7.html">Home Page 7</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">Solutions</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="dropdown">
+                            <a href="!#">Pages</a>
+                            <ul class="dropdown-menu clearfix">
+                                <li><a href="service.html">Services</a></li>
+                                <li class="dropdown">
+                                    <a href="service-single.html">Services Details</a>
+                                    <ul class="dropdown-menu clearfix">
+                                        <li><a href="service-single.html">Construction </a></li>
+                                        <li><a href="service-single-2.html">Architect Design</a></li>
+                                        <li><a href="service-single-3.html">Interior Design</a></li>
+                                        <li><a href="service-single-4.html">3D Animation</a></li>
+                                        <li><a href="service-single-5.html">House Renovation</a></li>
+                                        <li><a href="service-single-6.html">Ideas & Inspiration</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="team.html">Team Page</a></li>
+                                <li class="dropdown">
+                                    <a href="service-single.html">Blog</a>
+                                    <ul class="dropdown-menu clearfix">
+                                        <li><a href="service-single.html">Construction</a></li>
+                                        <li><a href="service-single-2.html">Architect Design</a></li>
+                                        <li><a href="service-single-3.html">Interior Design</a></li>
+                                        <li><a href="service-single-4.html">3D Animation</a></li>
+                                        <li><a href="service-single-5.html">House Renovation</a></li>
+                                        <li><a href="service-single-6.html">Ideas & Inspiration</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="faq.html">FAQ Page</a></li>
+                                <li><a href="pricing.html">Pricing Page</a></li>
+                                <li><a href="testimonial.html">Testimonial Page</a></li>
+                                <li><a href="contact.html">Contact Page</a></li>
+                                <li><a href="booking.html">Booking Page</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="!#">Shop</a>
+                            <ul class="dropdown-menu clearfix"> 
+                                <li><a href="shop.html">Shop Page </a></li>
+                                <li><a href="shop-single.html">Shop Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="ptx-mobile-header-social text-center">
+                    <a href="#"> <i class="fab fa-instagram"></i></a>
+                    <a href="#"> <i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"> <i class="fab fa-facebook"></i></a>
+                    <a href="#"> <i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- /Mobile-Menu -->
+    </div>
   <!-- End of Header section
     ============================================= -->
 
@@ -120,11 +212,22 @@
     						</a>
     					</div>
     				</div>
-    				<div class="nx-hero3-img text-center">
-    					<img src="assets/img/hero/hr2.png" alt="">
+    				<div class="nx-hero3-img header-x-hero text-center">
+    					<img class="tilt_scale" src="assets/img/hero/hr2.png" alt="">
     				</div>
     				
     			</div>
+    		</div>
+    		<div class="line_animation">
+    			<div class="line_area"></div>
+    			<div class="line_area"></div>
+    			<div class="line_area"></div>
+    			<div class="line_area"></div>
+    			<div class="line_area"></div>
+    			<div class="line_area"></div>
+    			<div class="line_area"></div>
+    			<div class="line_area"></div>
+    			<div class="line_area"></div>
     		</div>
     	</div>
     </section>
@@ -300,78 +403,84 @@
 
 <!-- Start of How we work section
     ============================================= -->
-    <section id="nx-hw-work3" class="nx-hw-work3-sec over-hidden pt-100 pb-100">
-    	<div class="container">
-    		<div class="nx-sec-title1 text-center pera-content ver_3 headline">
-    			<div class="subtitle text-uppercase">
-    				<span>{02}</span> How We Work
-    			</div>
-    			<h2 class="sec_title">Explore How Ideas Become Award-
-    			Winning Designs</h2>
-    			<p>We transform creative ideas into impactful designs that inspire audiences.</p>
-    		</div>
-    		<div class="nx-hw-work3-content mt-45">
-    			<div class="nx-hw-work3-item">
-    				<div class="item-text-wrap">
-    					<div class="item-top d-flex align-items-center justify-content-between">
-    						<div class="item-icon">
-    							<i><img src="assets/img/icon/ic26.svg" alt=""></i>
+    <section id="nx-hw-work3" class="nx-hw-work3-sec pt-100 pb-100">
+    	<div class="nx-hw-work3-vh">
+    		<div class="nx-hw-work3-sticky">
+    			<div class="container">
+    				<div class="nx-sec-title1 text-center pera-content ver_3 headline">
+    					<div class="subtitle text-uppercase">
+    						<span>{02}</span> How We Work
+    					</div>
+    					<h2 class="sec_title nx-itm-title nx-itm-anim">Explore How Ideas Become Award-
+    					Winning Designs</h2>
+    					<p>We transform creative ideas into impactful designs that inspire audiences.</p>
+    				</div>
+    				<div class="nx-hw-work3-wrapper  over-hidden">
+    					<div class="nx-hw-work3-content  mt-45">
+    						<div class="nx-hw-work3-item _1">
+    							<div class="item-text-wrap">
+    								<div class="item-top d-flex align-items-center justify-content-between">
+    									<div class="item-icon">
+    										<i><img src="assets/img/icon/ic26.svg" alt=""></i>
+    									</div>
+    									<div class="item-text">
+    										Stage 01
+    									</div>
+    								</div>
+    								<div class="item-desc mt-30 headline pera-content">
+    									<h3>Discover & Plan</h3>
+    									<p>We analyze your goals, research your market, and build a clear strategic roadmap.</p>
+    								</div>
+    							</div>
+    							<div class="item-img img-cover">
+    								<img src="assets/img/service/hw1.jpg" alt="">
+    							</div>
     						</div>
-    						<div class="item-text">
-    							Stage 01
+    						<div class="nx-hw-work3-item _2 active">
+    							<div class="item-text-wrap">
+    								<div class="item-top d-flex align-items-center justify-content-between">
+    									<div class="item-icon">
+    										<i><img src="assets/img/icon/ic27.svg" alt=""></i>
+    									</div>
+    									<div class="item-text">
+    										Stage 02
+    									</div>
+    								</div>
+    								<div class="item-desc mt-30 headline pera-content">
+    									<h3>Design & Execute</h3>
+    									<p>Our team creates compelling designs & executes data-driven digital strategies.</p>
+    								</div>
+    							</div>
+    							<div class="item-img img-cover">
+    								<img src="assets/img/service/hw2.jpg" alt="">
+    							</div>
+    						</div>
+    						<div class="nx-hw-work3-item _3">
+    							<div class="item-text-wrap">
+    								<div class="item-top d-flex align-items-center justify-content-between">
+    									<div class="item-icon">
+    										<i><img src="assets/img/icon/ic28.svg" alt=""></i>
+    									</div>
+    									<div class="item-text">
+    										Stage 03
+    									</div>
+    								</div>
+    								<div class="item-desc mt-30 headline pera-content">
+    									<h3>Optimize & Grow</h3>
+    									<p>We track performance, refine strategies, and scale results for long-term success.</p>
+    								</div>
+    							</div>
+    							<div class="item-img img-cover">
+    								<img src="assets/img/service/hw3.jpg" alt="">
+    							</div>
     						</div>
     					</div>
-    					<div class="item-desc mt-30 headline pera-content">
-    						<h3>Discover & Plan</h3>
-    						<p>We analyze your goals, research your market, and build a clear strategic roadmap.</p>
-    					</div>
-    				</div>
-    				<div class="item-img img-cover">
-    					<img src="assets/img/service/hw1.jpg" alt="">
-    				</div>
-    			</div>
-    			<div class="nx-hw-work3-item">
-    				<div class="item-text-wrap">
-    					<div class="item-top d-flex align-items-center justify-content-between">
-    						<div class="item-icon">
-    							<i><img src="assets/img/icon/ic27.svg" alt=""></i>
-    						</div>
-    						<div class="item-text">
-    							Stage 02
+    					<div class="nx-hw-work3-btm mt-50 pera-content d-flex justify-content-center align-items-center">
+    						<div class="inner-item">
+    							<span>Trusted</span> <p>Trusted by 850+ Companies Worldwide</p>
     						</div>
     					</div>
-    					<div class="item-desc mt-30 headline pera-content">
-    						<h3>Design & Execute</h3>
-    						<p>Our team creates compelling designs & executes data-driven digital strategies.</p>
-    					</div>
     				</div>
-    				<div class="item-img img-cover">
-    					<img src="assets/img/service/hw2.jpg" alt="">
-    				</div>
-    			</div>
-    			<div class="nx-hw-work3-item">
-    				<div class="item-text-wrap">
-    					<div class="item-top d-flex align-items-center justify-content-between">
-    						<div class="item-icon">
-    							<i><img src="assets/img/icon/ic28.svg" alt=""></i>
-    						</div>
-    						<div class="item-text">
-    							Stage 03
-    						</div>
-    					</div>
-    					<div class="item-desc mt-30 headline pera-content">
-    						<h3>Optimize & Grow</h3>
-    						<p>We track performance, refine strategies, and scale results for long-term success.</p>
-    					</div>
-    				</div>
-    				<div class="item-img img-cover">
-    					<img src="assets/img/service/hw3.jpg" alt="">
-    				</div>
-    			</div>
-    		</div>
-    		<div class="nx-hw-work3-btm mt-50 pera-content d-flex justify-content-center align-items-center">
-    			<div class="inner-item">
-    				<span>Trusted</span> <p>Trusted by 850+ Companies Worldwide</p>
     			</div>
     		</div>
     	</div>
@@ -601,8 +710,11 @@
     			<div class="nx-pro3-item-area">
     				<div class="nx-pro3-item-wrap d-flex justify-content-between">
     					<div class="nx-pro3-item">
-    						<div class="item-img">
+    						<div class="item-img position-relative">
     							<img src="assets/img/service/pro8.jpg" alt="">
+    							<div class="item-icon d-flex align-items-center justify-content-center">
+    								<a href="#"><i class="fa-solid fa-eye"></i></a>
+    							</div>
     						</div>
     						<div class="item-text d-flex align-items-center justify-content-between headline">
     							<div class="title_text">
@@ -622,15 +734,17 @@
     						</div>
     					</div>
     					<div class="nx-pro3-item">
-    						<div class="item-img">
+    						<div class="item-img position-relative">
     							<img src="assets/img/service/pro9.jpg" alt="">
+    							<div class="item-icon d-flex align-items-center justify-content-center">
+    								<a href="#"><i class="fa-solid fa-eye"></i></a>
+    							</div>
     						</div>
     						<div class="item-text d-flex align-items-center justify-content-between headline">
     							<div class="title_text">
     								<h3 class="text-uppercase href-underline"><a href="#">Nimo WP Theme</a></h3>
     								<div class="item-tag">
     									<a href="#">SEO Optimization</a>
-    									<a href="#">Android</a>
     								</div>
     							</div>
     							<div class="item-arrow">
@@ -645,8 +759,11 @@
     				</div>
     				<div class="nx-pro3-item-wrap d-flex justify-content-end">
     					<div class="nx-pro3-item">
-    						<div class="item-img">
+    						<div class="item-img position-relative">
     							<img src="assets/img/service/pro10.jpg" alt="">
+    							<div class="item-icon d-flex align-items-center justify-content-center">
+    								<a href="#"><i class="fa-solid fa-eye"></i></a>
+    							</div>
     						</div>
     						<div class="item-text d-flex align-items-center justify-content-between headline">
     							<div class="title_text">
@@ -668,8 +785,11 @@
     				</div>
     				<div class="nx-pro3-item-wrap d-flex justify-content-center">
     					<div class="nx-pro3-item">
-    						<div class="item-img">
+    						<div class="item-img position-relative">
     							<img src="assets/img/service/pro11.jpg" alt="">
+    							<div class="item-icon d-flex align-items-center justify-content-center">
+    								<a href="#"><i class="fa-solid fa-eye"></i></a>
+    							</div>
     						</div>
     						<div class="item-text d-flex align-items-center justify-content-between headline">
     							<div class="title_text">
@@ -691,14 +811,16 @@
     				</div>
     				<div class="nx-pro3-item-wrap d-flex justify-content-between">
     					<div class="nx-pro3-item">
-    						<div class="item-img">
+    						<div class="item-img position-relative">
     							<img src="assets/img/service/pro12.jpg" alt="">
+    							<div class="item-icon d-flex align-items-center justify-content-center">
+    								<a href="#"><i class="fa-solid fa-eye"></i></a>
+    							</div>
     						</div>
     						<div class="item-text d-flex align-items-center justify-content-between headline">
     							<div class="title_text">
     								<h3 class="text-uppercase href-underline"><a href="#">Company Logo</a></h3>
     								<div class="item-tag">
-    									<a href="#">SEO Optimization</a>
     									<a href="#">Android</a>
     								</div>
     							</div>
@@ -712,8 +834,11 @@
     						</div>
     					</div>
     					<div class="nx-pro3-item">
-    						<div class="item-img">
+    						<div class="item-img position-relative">
     							<img src="assets/img/service/pro13.jpg" alt="">
+    							<div class="item-icon d-flex align-items-center justify-content-center">
+    								<a href="#"><i class="fa-solid fa-eye"></i></a>
+    							</div>
     						</div>
     						<div class="item-text d-flex align-items-center justify-content-between headline">
     							<div class="title_text">
@@ -756,7 +881,7 @@
     						<div class="subtitle text-uppercase">
     							<span> {05}</span> CLIENTS FEEDBACK
     						</div>
-    						<h2 class="sec_title">Trusted by Brands Worldwide</h2>
+    						<h2 class="sec_title nx-itm-title nx-itm-anim">Trusted by Brands Worldwide</h2>
     					</div>
     					<div class="item-desc pera-content">
     						<div class="nx-btn1 mt-20 ver_5">
@@ -1339,7 +1464,7 @@
     			<div class="subtitle text-uppercase">
     				<span>{07}</span> PRICING PLAN
     			</div>
-    			<h2 class="sec_title">Pricing Built for Growth</h2>
+    			<h2 class="sec_title nx-itm-title nx-itm-anim">Pricing Built for Growth</h2>
     			<p>We offer flexible subscription-based design plans, giving you unlimited access to
     			premium creative services.</p>
     		</div>
@@ -1592,7 +1717,7 @@
     								<div class="subtitle text-uppercase">
     									<span>{08}</span> Response time: 1 hours
     								</div>
-    								<h2 class="sec_title">Tell Details About Your Project</h2>
+    								<h2 class="sec_title nx-itm-title nx-itm-anim">Tell Details About Your Project</h2>
     							</div>
     							<form action="#" method="post">
     								<div class="input-wrapper">
@@ -2016,7 +2141,7 @@
     				<div class="subtitle text-uppercase">
     					<span>{10}</span> LATEST UPDATES
     				</div>
-    				<h2 class="sec_title">Expert Insights on Marketing, Design, and Digital Innovation</h2>
+    				<h2 class="sec_title nx-itm-title nx-itm-anim">Expert Insights on Marketing, Design, and Digital Innovation</h2>
     			</div>
     			<div class="item-desc pera-content">
     				<p>Smart planning & creative innovation working together to elevate your brand performance.</p>
@@ -2164,7 +2289,7 @@
     					<div class="subtitle text-uppercase">
     						<span>{11}</span>  Newsletter
     					</div>
-    					<h2 class="sec_title text-uppercase"> Keep you in the loop.</h2>
+    					<h2 class="sec_title nx-itm-title nx-itm-anim text-uppercase"> Keep you in the loop.</h2>
     					<p>Get the latest news, insights directly to your inbox.</p>
     				</div>
     				<div class="nx-newslatter-form ver_2">

@@ -1,6 +1,8 @@
-.nx-insight-sec {
-	@media #{$xxl,$xl,$lg,$md,$sm,$xs,$xxs} {
-		display: none;
+.nx-insight-content {
+	gap: 30px;
+	@media #{$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+		justify-content: center !important;
 	}
 }
 
@@ -59,6 +61,17 @@
 			span {
 				color: #fff;
 			}
+			&:hover {
+				background-color: var(--nx-prime-c);
+				i {
+					background-color: #fff;
+					svg {
+						path {
+							fill: var(--nx-prime-c);
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -71,17 +84,20 @@
 	margin-bottom: 48px;
 	border-radius: 32px;
 	will-change: transform;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
 	.item-icon {
 		left: 0;
-		top: 50%;
+		top: 40%;
 		right: 0;
 		width: 72px;
+		opacity: 0;
 		height: 72px;
 		margin: 0 auto;
 		position: absolute;
+		visibility: hidden;
 		transform: translateY(-50%);
+		transition: all 500ms ease-in-out;
 		a {
 			color: #fff;
 			width: 100%;
@@ -91,6 +107,48 @@
 			align-items: center;
 			justify-content: center;
 			background-color: var(--nx-prime-c);
+			i {
+				font-size: 28px;
+				-webkit-animation: EYE 1.5s infinite;
+				animation: EYE 1.5s infinite;
+				-webkit-transform-origin: 50% 50%;
+				transform-origin: 50% 50%;
+			}
 		}
 	}
+	&:hover {
+		.item-icon {
+			top: 50%;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.nx-insight-right {
+	position: relative;
+}
+
+.nx-insight-img-wrap {
+	position: sticky;
+	top: 30px; 
+	margin-bottom: 30px;
+	border-radius: 20px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	transform-style: preserve-3d;
+}
+
+.nx-insight-img {
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.nx-insight-img img {
+	width: 100%;
+	height: auto;
+	display: block;
+	pointer-events: none;
 }

@@ -44,3 +44,20 @@ $xxxs:'(max-width: 360px)';
 		opacity: 0;
 	}
 }
+
+@keyframes borderpls2 {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 #FD3F00;
+		box-shadow: 0 0 0 0 #FD3F00;
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 10px #FD3F00;
+		box-shadow: 0 0 0 10px #FD3F00;
+		opacity: 0;
+	}
+	to {
+		-webkit-box-shadow: 0 0 0 0 #FD3F00;
+		box-shadow: 0 0 0 0 #FD3F00;
+		opacity: 0;
+	}
+}

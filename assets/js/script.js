@@ -84,6 +84,21 @@ Last change:    00/00/00
 	$('[data-background]').each(function() {
 		$(this).css('background-image', 'url('+ $(this).attr('data-background') + ')');
 	});
+
+	$(window).on("scroll", function() {
+		if ($(this).scrollTop() > 200) {
+			$('.nx-scrollup').fadeIn();
+		} else {
+			$('.nx-scrollup').fadeOut();
+		}
+	});
+	$('.nx-scrollup').on("click", function()  {
+		$("html, body").animate({
+			scrollTop: 0
+		}, 800);
+		return false;
+	}); 
+	
 	gsap.registerPlugin(ScrollTrigger);
 	
 	// Animation
@@ -242,7 +257,7 @@ Last change:    00/00/00
 				.from(".nx-hr3-marquee-text", { yPercent: 100,  duration: 1, transformOrigin: "center",  ease: "power1.out" },"< = .2")
 				.from(".nx-hr3-circle", { scale: 0,  duration: 1.5, transformOrigin: "center",  ease: "power1.out" },"< = .2")
 				.from(".nx-hr3-circle-social .nx-hr3-circle2", {  scale: 1.2, opacity: 0,  duration: 1.5, transformOrigin: "center",  ease: "power1.out" },"< = .3")
-				.from(".nx-hr3-circle-social .nx-hr3-social ul li", {  scale: 0, opacity: 0,  duration: 1.5, transformOrigin: "center",  ease: "power1.out" },"< = .3")
+				.from(".nx-hr3-circle-social .nx-hr3-social", {  scale: 1.1, opacity: 0,  duration: 1.5, transformOrigin: "center",  ease: "power1.out" },"< = .3")
 				.from(".nx-hr3-shape1", {  scale: 0, opacity: 0,  duration: 1, transformOrigin: "center",  ease: "power1.out" },"< = .3")
 				
 
@@ -824,10 +839,10 @@ Last change:    00/00/00
 	});
 
 
-	const items = document.querySelectorAll(".nx-ab1-count-item, .nx-who-w-count-item");
+	const items = document.querySelectorAll(".nx-ab1-count-item, .nx-who-w-count-item, .nx-ab3-count-card");
 
 	items.forEach(item => {
-		const heading = item.querySelector(".item-bottom h3,  .item-text h3");
+		const heading = item.querySelector(".item-bottom h3,  .item-text h3, .item-top h3");
 		if (!heading) return;
 
 		const split = new SplitText(heading, { type: "chars" });
@@ -947,7 +962,13 @@ Last change:    00/00/00
 		$(this).addClass('active');
 	}); 
 
+	$('.nx_item_active2').on('click', function (e) {
+		e.preventDefault();
 
+		var $group = $(this).closest('[data-nx-group]');
+		$group.find('.nx_item_active2').removeClass('active');
+		$(this).addClass('active');
+	});
 
 	if (window.matchMedia("(min-width: 1200px)").matches) {
 		var nxPro = gsap.timeline({
@@ -1013,71 +1034,46 @@ Last change:    00/00/00
 
 	}
 
-	// if (window.matchMedia("(min-width: 1200px)").matches) {
-
-	// 	gsap.registerPlugin(ScrollTrigger);
-
-	// 	const ServiceCardItems = gsap.utils.toArray(".nx-insight-img");
-
-	// 	ServiceCardItems.forEach((wrapper, index) => {
-
-	// 		const card = wrapper; 
-
-	// 		gsap.to(card, {
-
-	// 			transformPerspective: 1200, 
-	// 			x: 0,
-	// 			y: 0,
-	// 			scale: 1,
-	// 			rotation: 0,
-	// 			rotateX: -45,
-	// 			rotationY: 0,
-	// 			skewX: 0,
-	// 			skewY: 0,
-	// 			z: 0,
 
 
-	// 			transformOrigin: "50% 0% 0px",
-    //         ease: "none", 
-    //         force3D: true, 
+	if (window.matchMedia("(min-width: 1200px)").matches) {
+		const cards = Array.from(document.querySelectorAll('.nx-insight-img-wrap'));
+		const container = document.querySelector('.nx-insight-right');
+		gsap.set(container, {
+			perspective: 1200
+		});
+		cards.forEach((card, i) => {
+			card.style.position = 'sticky';
+			card.style.top = `${50 + (i * 35)}px`;
+			card.style.marginBottom = '20px';
+			card.style.zIndex = cards.length + i;
 
-    //         scrollTrigger: {
-    //         	trigger: wrapper,
+			const img = card.querySelector('.nx-insight-img');
 
-    //         	start: `top ${30 + 30 * index}px`, 
-    //         	end: "top -100%",
-    //         	endTrigger: ".nx-insight-content",
-    //             pin: true,        
-    //             pinSpacing: false,   
-    //             scrub: 2,         
-    //             anticipatePin: 2,    
-    //             markers: false,
-    //             invalidateOnRefresh: true, 
-    //         },
-    //     });
-	// 	});
-	// }
-
-	if (window.matchMedia("(min-width: 992px)").matches) {
-		const ServiceCardItem = gsap.utils.toArray(".nx-insight-img");
-		const animateCard = (card, wrapper, index) => {
-			gsap.to(card, {
-				transformOrigin: "top center",
-				duration: 2,
-				scrub: 1.5,
-				ease: "power1.out",
-				scrollTrigger: {
-					trigger: wrapper,
-					start: `top ${120 + 40 * index}`, 
-					end: "bottom 75%",
-					endTrigger: ".nx-insight-right",
-					pin: wrapper,
-					pinSpacing: false,
-					markers: false,
-				},
+			ScrollTrigger.create({
+				trigger: card,
+				start: `top ${90 + (i * 35)}px`,
+				end: "bottom 40%",
+				scrub: 1,
+				markers: false,
+				onUpdate: (self) => {
+					const progress = Math.min(1, self.progress * 1.5);
+					gsap.to(img, {
+						rotationX: -35 * progress,
+						scale: 1 - (0.05 * progress),
+						y: 10 * progress,
+						transformPerspective: 1200,
+						transformOrigin: "top center",
+						duration: 0.1,
+						ease: "none",
+						overwrite: true
+					});
+				}
 			});
-		};
-		ServiceCardItem.forEach((wrapper, index) => animateCard([index], wrapper, index));
+		});
+		gsap.set(container, {
+			minHeight: `${window.innerHeight + (cards.length * 200)}px`
+		});
 	}
 
 	gsap.utils.toArray(' .glow_view').forEach((el, index) => { 
@@ -1103,8 +1099,8 @@ Last change:    00/00/00
 			scrollTrigger: {
 				trigger: el,
 				scrub: 1.5,
-				start: "top 85%",
-				end: "top 75%",
+				start: "top 90%",
+				end: "top 80%",
 				toggleActions: "play none none reverse",
 				markers: false
 			}
@@ -1213,9 +1209,6 @@ Last change:    00/00/00
 			fadeEffect: {
 				crossFade: true
 			},
-			autoplay: {
-				delay: 6000,
-			},
 			thumbs: {
 				swiper: swiper3,
 			},
@@ -1223,24 +1216,6 @@ Last change:    00/00/00
 		});
 	}
 
-
-
-	var AXFT = gsap.timeline({
-		scrollTrigger: {
-			trigger: ".nx-hw-work3-content",
-			start: "top 70%",
-			toggleActions: "play reverse play reverse",
-			markers: false,
-		},
-	})
-	AXFT
-	.from(".nx-hw-work3-item", {
-		xPercent: -100,
-		opacity: 0,
-		ease: "back.out(1.5)",
-		duration: 1, 
-		stagger: -.2,
-	})
 
 
 	if (window.matchMedia("(min-width: 1200px)").matches) {
@@ -1389,8 +1364,55 @@ Last change:    00/00/00
 		.from(".nx-team3-item._1", { xPercent: 210,   ease: "power1.out" },"< = .1")
 		.from(".nx-team3-item._5", { xPercent: -210,   ease: "power1.out" },"< = ")
 		.from(".nx-team3-video", { scale: 0, transformOrigin: "center center", duration: 1.5,   ease: "power1.out" },"< = 1.5")
+	};
 
-		
+	const $section = $(".header-x-hero");
+	const $target = $(".tilt_scale");
+
+	$section.on("mousemove", function (e) {
+		const offset = $section.offset();
+		const width = $section.outerWidth();
+		const height = $section.outerHeight();
+
+		const x = e.pageX - offset.left;
+		const y = e.pageY - offset.top;
+
+		const rotateY = (x / width - 0.5) * 20;
+		const rotateX = (y / height - 0.5) * -20;
+
+		$target.css({
+			transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) `,
+		});
+	});
+
+	$section.on("mouseleave", function () {
+		$target.css({
+			transform:
+			"perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)",
+		});
+	});
+
+
+	if (window.matchMedia("(min-width: 1400px)").matches) { 
+		var WHYchoose = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.nx-hw-work3-sec',
+				start: "top 0%",
+				end: "top -100%",
+				scrub: 3,
+				markers: false,
+			}
+
+		});
+		WHYchoose
+		.from( ".nx-hw-work3-item._1" , {   yPercent: 100,   duration: 2, ease: "power2.out"})
+		.from( ".nx-hw-work3-item._2" , {   yPercent: 200,   duration: 2, ease: "power2.out"})
+		.from( ".nx-hw-work3-item._3" , {   yPercent: 300,   duration: 2, ease: "power2.out"})
+		.to( ".nx-hw-work3-item._1" , {   xPercent: -105,   duration: 2, ease: "power2.out"})
+		.to( ".nx-hw-work3-item._3" , {   xPercent: 105,  y: -30, duration: 2, ease: "power2.out"},"< = ")
+		.to( ".nx-hw-work3-item._2" , {     y: -15, duration: 2, ease: "power2.out"},"< = ")
+		.from( ".nx-hw-work3-btm" , {  opacity: 0,   y: 15, duration: 2, ease: "power2.out"},"< = ")
+
 	};
 
 

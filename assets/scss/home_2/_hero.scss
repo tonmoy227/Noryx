@@ -1,19 +1,26 @@
 .nx-hero2-sec {
 	z-index: 1;
 	padding: 0px 15px;
+	position: relative;
+	&:before {
+		top: 0;
+		left: 0;
+		width: 100%;
+		content: '';
+		height: 100%;
+		position: absolute;
+		background-color: #00000099;
+	}
 	.nx-hero2-bg {
 		top: 0;
 		left: 0;
+		opacity: .7;
 		z-index: -1;
-		&:before {
-			top: 0;
-			left: 0;
-			width: 100%;
-			content: '';
-			height: 100%;
-			position: absolute;
-			background-color: #00000099;
-		}
+	}
+	.nx-hero2-vd {
+		top: 0;
+		left: 0;
+		z-index: -2;
 	}
 }
 .nx-hero2-content {
@@ -23,7 +30,9 @@
 }
 
 .nx-hero2-top {
+	z-index: 2;
 	max-width: 1550px;
+	position: relative;
 	padding-left: 30px;
 	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
 		padding-left: 0;
@@ -166,7 +175,7 @@
 	margin-top: 85px;
 	white-space: nowrap;
 	margin-bottom: -10px;
-	letter-spacing: -10px;
+	letter-spacing: -28px;
 	font-family: var(--nx-heading);
 	span {
 		color: var(--nx-prime-c);

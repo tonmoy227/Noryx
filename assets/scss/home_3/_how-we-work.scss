@@ -6,26 +6,54 @@
 			color: #474747;
 		}
 	}
+	.container {
+		max-width: 1462px;
+	}
 }
-
+.nx-hw-work3-vh {
+	height: 200vh;
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		height: 100%;
+	}
+}
+.nx-hw-work3-sticky {
+	top: 60px;
+	position: sticky;
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		position: static;
+	}
+}
 .nx-hw-work3-content {
-	gap: 25px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	@media #{$md} {
-		grid-template-columns: 1fr 1fr;
-	}
-	@media #{$sm,$xs,$xxs} {
-		grid-template-columns: 1fr;
-	}
+	margin: 0px auto;
+	max-width: 460px;
+	margin-top: 60px;
+	position: relative;
 }
 
 .nx-hw-work3-item {
+	top: 0;
+	left: 0;
 	z-index: 1;
+	margin: 0px auto;
+	max-width: 460px;
 	overflow: hidden;
-	position: relative;
+	position: absolute;
 	border-radius: 32px;
+	margin-bottom: 32px;
 	border: 1px solid #D9D9D9;
+	background-color: #fff;
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		position: relative;
+	}
+	&:is(._1) {
+		position: relative;
+	}
+	&:is(._2) {
+		top: 15px;
+	}
+	&:is(._3) {
+		top: 30px;
+	}
 	&:before {
 		top: 0;
 		left: 0;
@@ -97,7 +125,7 @@
 			transition: all 400ms ease-in-out;
 		}
 	}
-	&:hover {
+	&:is(.active){
 		&:before {
 			opacity: 1;
 		}

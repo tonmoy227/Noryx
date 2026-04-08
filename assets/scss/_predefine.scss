@@ -81,6 +81,29 @@ body::-webkit-scrollbar-thumb {
 		list-style: none;
 	}
 }
+.nx-scrollup {
+	color: #fff;
+	width: 40px;
+	right: 20px;
+	z-index: 5;
+	height: 40px;
+	bottom: 20px;
+	display: none;
+	font-size: 16px;
+	position: fixed;
+	font-weight: 700;
+	line-height: 40px;
+	border-radius: 8px;
+	background: var(--nx-prime-c);
+	&:hover {
+		color: #fff;
+	}
+	&:is(.ver_2) {
+		background: linear-gradient(360deg, #5C3FE9 -75.69%, #B019D6 100%);
+	}
+}
+
+
 
 .headline h1,
 .headline h2,
