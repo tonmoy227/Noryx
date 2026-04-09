@@ -6,6 +6,16 @@
 		transform:rotate(360deg);
 	}
 }
+@keyframes flowGradientEnhanced {
+	0% {
+		background-position: center 0%;
+		background-size: 100% 280%;
+	}
+	100% {
+		background-position: center 65%;
+		background-size: 100% 320%;
+	}
+}
 .nx-hero-about {
 	background-color: #E0E0E0;
 }
@@ -158,6 +168,7 @@
 	margin: 0 auto;
 	border-radius: 100%;
 	background: linear-gradient(360deg, #5C3FE9 -11.39%, #B019D6 88.88%);
+	animation: flowGradientEnhanced 2s infinite alternate;
 	@media #{$lg} {
 		width: 600px;
 		height: 600px;

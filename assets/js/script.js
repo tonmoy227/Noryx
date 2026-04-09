@@ -378,16 +378,23 @@ Last change:    00/00/00
 			});
 			if( $(el).hasClass('nx-itm-anim') ){
 				gsap.set(el.split.chars, {
-					opacity: .5,
+					opacity: .2,
 					color: "#000000",
+					y: "-3",
+				});
+			}
+			if( $(el).hasClass('nx-itm-anim2') ){
+				gsap.set(el.split.chars, {
+					opacity: .2,
+					color: "#fff",
 					y: "-3",
 				});
 			}
 			el.anim = gsap.to(el.split.chars, {
 				scrollTrigger: {
 					trigger: el,
-					start: "top 92%",
-					end: "top 60%",
+					start: "top 80%",
+					end: "top 40%",
 					markers: false,
 					scrub: 1,
 				},

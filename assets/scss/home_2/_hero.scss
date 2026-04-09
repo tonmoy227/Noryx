@@ -11,6 +11,15 @@
 		position: absolute;
 		background-color: #00000099;
 	}
+	&:after {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		content: '';
+		height: 2px;
+		position: absolute;
+		background: linear-gradient(90deg, rgba(253, 63, 0, 0) 0%, #FD3F00 50.22%, rgba(253, 63, 0, 0) 100%); 
+	}
 	.nx-hero2-bg {
 		top: 0;
 		left: 0;
