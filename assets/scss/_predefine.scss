@@ -439,6 +439,12 @@ a {
 		font-weight: 700;
 		line-height: 1.27;
 		letter-spacing: -2px;
+		@media #{$md,$sm,$xs} {
+			font-size: 35px;
+		}
+		@media #{$xxs} {
+			font-size: 30px;
+		}
 	}
 	p {
 		padding-top: 10px;

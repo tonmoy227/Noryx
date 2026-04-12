@@ -171,6 +171,10 @@
 							padding: 12px 14px;
 							font-family: var(--nx-heading);
 							background: linear-gradient(360deg, #5C3FE9 -75.69%, #B019D6 100%);
+							&:hover {
+								letter-spacing: .5px;
+								background: linear-gradient(360deg, #5C3FE9 -100%, #B019D6 75.69%);
+							}
 						}
 					}
 				}

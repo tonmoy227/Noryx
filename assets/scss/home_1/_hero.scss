@@ -41,11 +41,15 @@
 #nx_hero_anim {
 	left: 0;
 	right: 0;
+	bottom: 0;
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
 	max-width: 663px;
 	position: relative;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		height: auto;
+	}
 }
 .nx-hero1-sec {
 	z-index: 1;
@@ -63,6 +67,9 @@
 		max-width: 320px;
 		position: absolute;
 		background-color: #060708;
+		@media #{$md,$sm,$xs,$xxs} {
+			display: none;
+		}
 	}
 	.nx-hr-shape1 {
 		top: -30%;

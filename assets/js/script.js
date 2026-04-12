@@ -1225,27 +1225,33 @@ Last change:    00/00/00
 
 
 
+
 	if (window.matchMedia("(min-width: 1200px)").matches) {
-		const ServiceCardItem2 = gsap.utils.toArray(".nx-ser3-img");
-		const animateCard2 = (card, wrapper, index) => {
-			gsap.to(card, {
-				transformOrigin: "top center",
-				duration: 2,
-				scrub: 1.5,
-				ease: "power1.out",
+		let proSroll = gsap.timeline();
+		let otherSections_2 = document.querySelectorAll('.nx-ser3-img')
+		otherSections_2.forEach((section, index, i) => {
+			gsap.set(otherSections_2, {
+				scale: 1,
+				filter: "blur(0px)" 
+			});
+			proSroll.to(section, {
+				scale: index === otherSections_2.length - 1 ? 1 : 0.85,
+				filter: index === otherSections_2.length - 1 ? "blur(0px)" : "blur(10px)",
 				scrollTrigger: {
-					trigger: wrapper,
-					start: `top ${100 + 0 * index}`, 
-					end: "bottom 55%",
-					endTrigger: ".nx-ser3-content",
-					pin: wrapper,
+					trigger: section,
+					pin: section,
+					scrub: 1,
+					start: "top " + (100 + 30 * i),
+					end: "bottom 45%",
+					ease: "none",
+					endTrigger: '.nx-ser3-content',
 					pinSpacing: false,
 					markers: false,
 				},
-			});
-		};
-		ServiceCardItem2.forEach((wrapper, index) => animateCard2([index], wrapper, index));
-	} 
+			})
+		});
+	};
+
 
 	if (window.matchMedia("(min-width: 1200px)").matches) {
 		let texts = gsap.utils.toArray(".nx-ser3-text");

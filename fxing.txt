@@ -1,0 +1,35 @@
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 481px) and (max-width: 575px) {
+  .nx-sec-title1 .sec_title {
+    font-size: 35px;
+  }
+}
+@media (max-width: 480px) {
+  .nx-sec-title1 .sec_title {
+    font-size: 30px;
+  }
+}
+if (window.matchMedia("(min-width: 1200px)").matches) {
+		let proSroll = gsap.timeline();
+		let otherSections_2 = document.querySelectorAll('.nx-ser3-img')
+		otherSections_2.forEach((section, index, i) => {
+			gsap.set(otherSections_2, {
+				scale: 1,
+				filter: "blur(0px)"
+			});
+			proSroll.to(section, {
+				scale: index === otherSections_2.length - 1 ? 1 : 0.85,
+				filter: index === otherSections_2.length - 1 ? "blur(0px)" : "blur(10px)",
+				scrollTrigger: {
+					trigger: section,
+					pin: section,
+					scrub: 1,
+					start: "top " + (100 + 30 * i),
+					end: "bottom 45%",
+					ease: "none",
+					endTrigger: '.nx-ser3-content',
+					pinSpacing: false,
+					markers: false,
+				},
+			})
+		});
+	};
